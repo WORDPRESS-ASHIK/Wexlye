@@ -9,12 +9,11 @@ export const Hero: React.FC = () => {
   const title3Ref = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
-
-    tl.fromTo(
+    // Elegant entrance animation without pushing text out of lower viewport bounds
+    gsap.fromTo(
       [title1Ref.current, title2Ref.current, title3Ref.current],
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1.0, stagger: 0.12, delay: 0.15 }
+      { opacity: 0, y: 16 },
+      { opacity: 1, y: 0, duration: 0.7, stagger: 0.08, ease: 'power3.out' }
     );
   }, []);
 
