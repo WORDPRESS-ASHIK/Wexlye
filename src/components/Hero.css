@@ -1,28 +1,39 @@
 /* ==========================================================================
-   Hero Section - Typography Only (Exact Match to Reference Screenshot)
+   Hero Section - Full Viewport Height (100vh / 100svh) Typographic Showcase
    ========================================================================== */
 
 .hero-section {
   position: relative;
   background-color: #ffffff;
-  /* Top spacing accounting for 72px fixed header */
-  padding-top: clamp(120px, 11vw, 160px);
-  padding-bottom: clamp(80px, 8vw, 130px);
+  /* Full visible desktop viewport height */
+  min-height: 100vh;
+  min-height: 100svh;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Target: TOP ~15-20% viewport height (accommodating 72px fixed header) */
+  padding-top: max(72px, 14vh);
+  /* Target: BOTTOM ~15-20% viewport height */
+  padding-bottom: max(40px, 14vh);
+  /* Target: LEFT ~8-10% viewport width, RIGHT ~94-97% viewport width */
+  padding-left: clamp(24px, 7vw, 110px);
+  padding-right: clamp(24px, 4.5vw, 65px);
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .hero-container {
   width: 100%;
-  max-width: 1420px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: clamp(24px, 4vw, 60px);
-  padding-right: clamp(24px, 4vw, 60px);
+  max-width: 1600px;
+  margin: 0;
+  padding: 0;
 }
 
 /* ==========================================================================
-   Hero Heading System — Large Scale, Thin Poppins 300, Tight 0.88 Line-Height
+   Hero Heading System — Oversized, Immersive, Thin Poppins 300
    ========================================================================== */
 
 .hero-heading-block {
@@ -36,12 +47,12 @@
 
 .hero-word {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  /* Very large, thin/light geometric sans-serif font */
+  /* Thin, elegant, geometric appearance matching Poppins 300 reference */
   font-weight: 300 !important;
-  /* Large display typography: 150px – 185px on desktop (approx 170px at 1440px) */
-  font-size: clamp(55px, 11.8vw, 175px);
+  /* Full-viewport scaling: dominates the 1440x800/900 viewport height & width */
+  font-size: clamp(52px, min(12vw, 18.5vh), 180px);
   line-height: 0.88;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   margin: 0;
   padding: 0;
   text-transform: capitalize;
@@ -63,7 +74,7 @@
   align-items: baseline;
   justify-content: flex-start;
   /* Distinct horizontal gap between Develop. and Deliver. */
-  column-gap: clamp(40px, 6.2vw, 100px);
+  column-gap: clamp(35px, 5.5vw, 85px);
   width: 100%;
   margin: 0;
   padding: 0;
@@ -86,9 +97,15 @@
    ========================================================================== */
 
 @media (max-width: 1024px) {
-  .hero-word {
-    font-size: clamp(50px, 11.2vw, 120px);
+  .hero-section {
+    padding-left: clamp(24px, 5vw, 60px);
+    padding-right: clamp(24px, 4vw, 45px);
   }
+
+  .hero-word {
+    font-size: clamp(48px, min(11.5vw, 16vh), 125px);
+  }
+
   .hero-row-second {
     column-gap: clamp(25px, 4.5vw, 55px);
   }
@@ -96,8 +113,12 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    padding-top: 105px;
-    padding-bottom: 50px;
+    min-height: 100svh;
+    height: auto;
+    padding-top: max(80px, 15svh);
+    padding-bottom: max(40px, 10svh);
+    padding-left: clamp(20px, 6vw, 32px);
+    padding-right: clamp(20px, 6vw, 32px);
   }
 
   .hero-row-second {
@@ -108,13 +129,13 @@
   }
 
   .hero-word {
-    font-size: clamp(44px, 13vw, 82px);
-    line-height: 0.92;
+    font-size: clamp(46px, 14vw, 85px);
+    line-height: 0.90;
   }
 }
 
 @media (max-width: 480px) {
   .hero-word {
-    font-size: clamp(38px, 14vw, 58px);
+    font-size: clamp(40px, 15vw, 62px);
   }
 }
