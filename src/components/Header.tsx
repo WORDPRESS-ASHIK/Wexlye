@@ -11,7 +11,7 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
+      if (window.scrollY > 30) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -43,14 +43,14 @@ export const Header: React.FC = () => {
           <div className="header-actions">
             <a
               href="/contact"
-              className="btn-pill header-quote-btn"
+              className="btn-quote"
               onClick={(e) => {
                 e.preventDefault();
                 navigate('/contact');
               }}
             >
               <span>Get a Quote</span>
-              <ArrowRight size={16} className="btn-arrow" />
+              <ArrowRight size={15} className="btn-quote-arrow" />
             </a>
 
             <button

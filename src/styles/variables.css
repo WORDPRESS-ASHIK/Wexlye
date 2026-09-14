@@ -45,10 +45,10 @@
   --line-height-heading: 1.15;
   --line-height-body: 1.65;
   
-  /* Spacing */
-  --container-max-width: 1320px;
-  --container-padding: clamp(1.25rem, 4vw, 3.5rem);
-  --section-spacing-y: clamp(70px, 9vw, 140px);
+  /* Spacing matching reference 1300px layout */
+  --container-max-width: 1300px;
+  --container-padding: clamp(20px, 3vw, 40px);
+  --section-spacing-y: clamp(60px, 8vw, 120px);
   
   /* Animations & Transitions */
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);

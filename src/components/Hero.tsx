@@ -18,47 +18,46 @@ export const Hero: React.FC = () => {
 
     tl.fromTo(
       [title1Ref.current, title2Ref.current, title3Ref.current],
-      { y: 80, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1.1, stagger: 0.15, delay: 0.2 }
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.0, stagger: 0.12, delay: 0.15 }
     )
     .fromTo(
       textRef.current,
-      { y: 40, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.9 },
-      '-=0.5'
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8 },
+      '-=0.4'
     )
     .fromTo(
       mediaRef.current,
-      { scale: 0.96, opacity: 0 },
-      { scale: 1, opacity: 1, duration: 1.2 },
-      '-=0.6'
+      { scale: 0.98, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 1.0 },
+      '-=0.5'
     );
   }, []);
 
   return (
     <section ref={heroRef} className="hero-section">
       <div className="container hero-container">
-        {/* Editorial Staggered Typography matching texan.agency */}
-        <div className="hero-typography-grid">
-          <div className="hero-col-left">
-            <h1 ref={title1Ref} className="hero-display-word word-design">
-              Design.
-            </h1>
-            <h1 ref={title2Ref} className="hero-display-word word-develop highlight-gold">
+        {/* Editorial Heading Typography matching texan.agency reference */}
+        <div className="hero-heading-block">
+          <h1 ref={title1Ref} className="hero-word hero-word-design">
+            Design.
+          </h1>
+          <div className="hero-row-second">
+            <h2 ref={title2Ref} className="hero-word hero-word-develop">
               Develop.
-            </h1>
-          </div>
-
-          <div className="hero-col-right">
-            <h1 ref={title3Ref} className="hero-display-word word-deliver">
+            </h2>
+            <h2 ref={title3Ref} className="hero-word hero-word-deliver">
               Deliver.
-            </h1>
+            </h2>
           </div>
         </div>
 
-        {/* Agency Manifesto & Divider */}
-        <div ref={textRef} className="hero-statement-row">
-          <hr className="texan-divider" />
+        {/* Agency Manifesto & 150px Divider matching reference */}
+        <div ref={textRef} className="hero-statement-block">
+          <div className="hero-divider-wrap">
+            <hr className="hero-divider" />
+          </div>
           <div className="hero-statement-text">
             <p className="statement-lead">
               At Texan, we harness the full power of creativity.
@@ -70,7 +69,7 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Hero Visual Media Banner with Floating Contact Button */}
+      {/* Hero Visual Media Banner with Floating Action Circle */}
       <div ref={mediaRef} className="hero-banner-wrapper container">
         <div className="hero-media-card">
           <img
@@ -92,7 +91,7 @@ export const Hero: React.FC = () => {
             data-cursor="pointer"
           >
             <div className="circle-inner">
-              <ArrowUpRight size={32} className="circle-arrow" />
+              <ArrowUpRight size={28} className="circle-arrow" />
               <span className="circle-label">START PROJECT</span>
             </div>
           </a>
