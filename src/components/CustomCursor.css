@@ -1,0 +1,144 @@
+.custom-cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-cursor-container.visible {
+  opacity: 1;
+}
+
+/* Inner Dot */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  margin-left: -4px;
+  background-color: var(--accent-yellow);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100000;
+  transition: transform 0.05s linear, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+  will-change: transform;
+}
+
+.cursor-dot.cursor-pointer {
+  opacity: 0;
+}
+
+.cursor-dot.cursor-case-study,
+.cursor-dot.cursor-drag {
+  opacity: 0;
+}
+
+/* Outer Follower Ring */
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  margin-top: -19px;
+  margin-left: -19px;
+  border: 1.5px solid rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              margin 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+/* Dark mode / inverse cursor ring contrast */
+.dark-section ~ .custom-cursor-container .cursor-ring,
+.dark-section .cursor-ring {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Cursor State: Pointer / Hover */
+.cursor-ring.cursor-pointer {
+  width: 52px;
+  height: 52px;
+  margin-top: -26px;
+  margin-left: -26px;
+  border-color: var(--accent-yellow);
+  background-color: rgba(252, 206, 16, 0.15);
+  backdrop-filter: blur(2px);
+}
+
+/* Cursor State: Case Study "VIEW" Badge */
+.cursor-ring.cursor-case-study {
+  width: 88px;
+  height: 88px;
+  margin-top: -44px;
+  margin-left: -44px;
+  background-color: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+  box-shadow: 0 10px 30px rgba(252, 206, 16, 0.4);
+}
+
+/* Cursor State: Drag Slider */
+.cursor-ring.cursor-drag {
+  width: 76px;
+  height: 76px;
+  margin-top: -38px;
+  margin-left: -38px;
+  background-color: #000000;
+  border-color: #000000;
+}
+
+/* Cursor State: Service Highlight */
+.cursor-ring.cursor-service {
+  width: 64px;
+  height: 64px;
+  margin-top: -32px;
+  margin-left: -32px;
+  border-color: var(--accent-yellow);
+  background-color: rgba(252, 206, 16, 0.2);
+}
+
+/* Text inside badge */
+.cursor-text {
+  font-family: var(--font-family);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cursor-ring.cursor-case-study .cursor-text {
+  opacity: 1;
+  transform: scale(1);
+  color: #000000;
+}
+
+.cursor-ring.cursor-drag .cursor-text {
+  opacity: 1;
+  transform: scale(1);
+  color: #ffffff;
+}
+
+/* Mobile & Touch Fallback */
+@media (pointer: coarse), (hover: none) {
+  .custom-cursor-container {
+    display: none !important;
+  }
+}

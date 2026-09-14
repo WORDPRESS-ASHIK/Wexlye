@@ -1,0 +1,103 @@
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { useRouter } from '../context/RouterContext';
+import { ArrowUpRight } from 'lucide-react';
+import './Hero.css';
+
+export const Hero: React.FC = () => {
+  const { navigate } = useRouter();
+  const heroRef = useRef<HTMLElement>(null);
+  const title1Ref = useRef<HTMLHeadingElement>(null);
+  const title2Ref = useRef<HTMLHeadingElement>(null);
+  const title3Ref = useRef<HTMLHeadingElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const mediaRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+
+    tl.fromTo(
+      [title1Ref.current, title2Ref.current, title3Ref.current],
+      { y: 80, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.1, stagger: 0.15, delay: 0.2 }
+    )
+    .fromTo(
+      textRef.current,
+      { y: 40, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.9 },
+      '-=0.5'
+    )
+    .fromTo(
+      mediaRef.current,
+      { scale: 0.96, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 1.2 },
+      '-=0.6'
+    );
+  }, []);
+
+  return (
+    <section ref={heroRef} className="hero-section">
+      <div className="container hero-container">
+        {/* Editorial Staggered Typography matching texan.agency */}
+        <div className="hero-typography-grid">
+          <div className="hero-col-left">
+            <h1 ref={title1Ref} className="hero-display-word word-design">
+              Design.
+            </h1>
+            <h1 ref={title2Ref} className="hero-display-word word-develop highlight-gold">
+              Develop.
+            </h1>
+          </div>
+
+          <div className="hero-col-right">
+            <h1 ref={title3Ref} className="hero-display-word word-deliver">
+              Deliver.
+            </h1>
+          </div>
+        </div>
+
+        {/* Agency Manifesto & Divider */}
+        <div ref={textRef} className="hero-statement-row">
+          <hr className="texan-divider" />
+          <div className="hero-statement-text">
+            <p className="statement-lead">
+              At Texan, we harness the full power of creativity.
+            </p>
+            <p className="statement-body">
+              to craft captivating brand experiences that will transform your vision into a story that resonates and inspires.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Hero Visual Media Banner with Floating Contact Button */}
+      <div ref={mediaRef} className="hero-banner-wrapper container">
+        <div className="hero-media-card">
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop"
+            alt="Texan Agency Digital Excellence"
+            className="hero-media-img"
+          />
+          <div className="hero-media-overlay" />
+
+          {/* Floating Action Circle Button */}
+          <a
+            href="/contact"
+            className="hero-action-circle"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate('/contact');
+            }}
+            aria-label="Start a project with Texan Agency"
+            data-cursor="pointer"
+          >
+            <div className="circle-inner">
+              <ArrowUpRight size={32} className="circle-arrow" />
+              <span className="circle-label">START PROJECT</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};

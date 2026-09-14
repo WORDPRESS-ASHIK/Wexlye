@@ -1,0 +1,287 @@
+@import './variables.css';
+
+/* Box sizing and baseline reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  line-height: var(--line-height-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Custom Selection Highlight */
+::selection {
+  background-color: var(--accent-yellow);
+  color: #000000;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  line-height: var(--line-height-heading);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.display-title {
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-tight);
+  font-weight: 300;
+  letter-spacing: -0.035em;
+  color: var(--text-primary);
+  text-transform: capitalize;
+}
+
+.section-eyebrow {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  display: inline-block;
+  margin-bottom: 1.25rem;
+}
+
+.highlight-gold {
+  color: var(--accent-yellow);
+}
+
+p {
+  color: var(--text-muted);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+p.lead {
+  font-size: var(--font-size-body-lg);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.section-padding {
+  padding-top: var(--section-spacing-y);
+  padding-bottom: var(--section-spacing-y);
+}
+
+.section-padding-top {
+  padding-top: var(--section-spacing-y);
+}
+
+.section-padding-bottom {
+  padding-bottom: var(--section-spacing-y);
+}
+
+/* Common Horizontal Line Divider like Texan Agency */
+.texan-divider {
+  width: 150px;
+  height: 1px;
+  background-color: var(--divider-color);
+  margin: 1.5rem 0;
+  border: none;
+}
+
+/* Dark Section styling */
+.dark-section {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.dark-section h1,
+.dark-section h2,
+.dark-section h3,
+.dark-section h4,
+.dark-section h5,
+.dark-section h6,
+.dark-section .display-title,
+.dark-section .section-eyebrow {
+  color: var(--text-light);
+}
+
+.dark-section p {
+  color: var(--text-light-muted);
+}
+
+.dark-section .texan-divider {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Pill CTA Buttons */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  cursor: pointer;
+  border: 1px solid var(--text-primary);
+  background-color: transparent;
+  color: var(--text-primary);
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.btn-pill:hover {
+  background-color: var(--text-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-subtle);
+}
+
+.btn-pill-gold {
+  background-color: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+  color: #000000;
+  font-weight: 600;
+}
+
+.btn-pill-gold:hover {
+  background-color: var(--accent-yellow-hover);
+  border-color: var(--accent-yellow-hover);
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(252, 206, 16, 0.35);
+}
+
+.btn-pill-dark {
+  background-color: var(--bg-dark);
+  border-color: var(--bg-dark);
+  color: #ffffff;
+}
+
+.btn-pill-dark:hover {
+  background-color: #222222;
+  border-color: #222222;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-pill-white {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+}
+
+.btn-pill-white:hover {
+  background-color: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+  transform: translateY(-2px);
+}
+
+/* Social Pills */
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 400;
+  border: 1px solid var(--border-dark);
+  color: var(--text-light);
+  background: rgba(255, 255, 255, 0.05);
+  transition: all var(--transition-fast);
+}
+
+.social-pill:hover {
+  border-color: var(--accent-yellow);
+  color: var(--accent-yellow);
+  transform: translateY(-3px);
+  background: rgba(252, 206, 16, 0.1);
+}
+
+/* Custom Cursor cursor-none trigger for fine pointers */
+@media (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor [role="button"],
+  body.has-custom-cursor input,
+  body.has-custom-cursor textarea,
+  body.has-custom-cursor select,
+  body.has-custom-cursor [data-cursor] {
+    cursor: none !important;
+  }
+}
+
+/* Smooth fade in animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-yellow);
+  outline-offset: 3px;
+}

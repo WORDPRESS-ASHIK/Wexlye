@@ -1,0 +1,169 @@
+.services-section {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.services-header-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.services-statement {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 400;
+  color: var(--text-primary);
+  max-width: 620px;
+  line-height: 1.4;
+}
+
+.services-header-row .section-eyebrow {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-transform: capitalize;
+  margin-bottom: 0;
+}
+
+/* Services Interactive List */
+.services-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-row-item {
+  position: relative;
+  padding: clamp(1.75rem, 3.5vw, 2.5rem) 0;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.service-row-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Number & Title */
+.service-title-col {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Authentic reference site hover translation! */
+.service-row-item:hover .service-title-col {
+  transform: translateX(30px);
+}
+
+.service-number {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 600;
+  color: var(--accent-yellow);
+  letter-spacing: 0.02em;
+}
+
+.service-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.6vw, 3.2rem);
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  transition: color var(--transition-fast);
+}
+
+.service-row-item:hover .service-name {
+  color: #000000;
+}
+
+/* Floating Tilted Preview Image on Hover */
+.service-hover-preview {
+  position: absolute;
+  right: 18%;
+  top: 50%;
+  width: 290px;
+  height: 185px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.9) rotateZ(0deg);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 5;
+}
+
+/* Authentic reference site tilt angle */
+.service-hover-preview.active {
+  opacity: 1;
+  transform: translateY(-50%) scale(1) rotateZ(3deg);
+}
+
+.service-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Arrow Column */
+.service-arrow-col {
+  display: flex;
+  align-items: center;
+}
+
+.service-arrow-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  transition: all var(--transition-base);
+}
+
+.service-row-item:hover .service-arrow-circle {
+  border-color: var(--accent-yellow);
+  background-color: var(--accent-yellow);
+  color: #000000;
+  transform: scale(1.08);
+}
+
+.service-row-item:hover .arrow-icon {
+  transform: translate(2px, -2px);
+}
+
+/* Divider Line */
+.service-row-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  transition: background-color var(--transition-fast);
+}
+
+.service-row-item:hover .service-row-divider {
+  background-color: var(--accent-yellow);
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .service-hover-preview {
+    display: none; /* Hide hover floating preview on touch screens */
+  }
+
+  .service-row-item:hover .service-title-col {
+    transform: translateX(12px);
+  }
+
+  .service-arrow-circle {
+    width: 40px;
+    height: 40px;
+  }
+}

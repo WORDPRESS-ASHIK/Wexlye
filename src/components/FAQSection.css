@@ -1,0 +1,116 @@
+.faq-section {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.faq-container {
+  max-width: 980px;
+}
+
+.faq-header {
+  margin-bottom: 3.5rem;
+}
+
+.faq-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+/* Accordion Stack */
+.faq-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.faq-accordion-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: #fcfcfc;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.faq-accordion-card.active {
+  background-color: #ffffff;
+  border-color: var(--accent-yellow);
+  box-shadow: var(--shadow-card);
+}
+
+.faq-question-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem 2rem;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  gap: 1.5rem;
+}
+
+.faq-question-text {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  transition: color var(--transition-fast);
+}
+
+.faq-accordion-card.active .faq-question-text {
+  color: #000000;
+}
+
+.faq-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+}
+
+.faq-chevron {
+  transition: transform var(--transition-base);
+}
+
+.faq-icon-wrap.rotated {
+  border-color: var(--accent-yellow);
+  background-color: var(--accent-yellow);
+  color: #000000;
+}
+
+.faq-icon-wrap.rotated .faq-chevron {
+  transform: rotate(180deg);
+}
+
+/* CSS Grid Smooth Height Transition */
+.faq-answer-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-answer-collapse.expanded {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+  overflow: hidden;
+}
+
+.faq-answer-inner p {
+  padding: 0 2rem 1.75rem 2rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
