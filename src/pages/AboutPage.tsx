@@ -1,4 +1,5 @@
 import React from 'react';
+import { PageHero } from '../components/PageHero';
 import { ClientLogos } from '../components/ClientLogos';
 import { FAQSection } from '../components/FAQSection';
 import { ContactCTA } from '../components/ContactCTA';
@@ -35,26 +36,20 @@ export const AboutPage: React.FC = () => {
 
   return (
     <div className="about-page-view">
-      {/* About Hero matching texan.agency */}
-      <section className="about-hero-section section-padding-top">
-        <div className="container">
-          <div className="about-hero-grid">
-            <div className="about-hero-main">
-              <h1 className="about-hero-title">Development</h1>
-              <hr className="texan-divider" />
-              <h2 className="about-hero-sub">Built for You</h2>
-            </div>
+      {/* 1. ABOUT PAGE HERO */}
+      <PageHero
+        eyebrow="ABOUT WEXLYE."
+        heading={
+          <>
+            WE BUILD DIGITAL EXPERIENCES THAT MOVE BRANDS <span className="highlight-green">FORWARD.</span>
+          </>
+        }
+        subtitle="WEXLYE is a digital growth partner focused on building meaningful brands, high-performing websites, and digital experiences that create lasting business value."
+      />
 
-            <div className="about-hero-statement">
-              <p className="lead">
-                We are a design and development company specializing in websites, mobile apps, and UI/UX design. We deliver creative, high-quality solutions that prioritize user-centric experiences to elevate your brand.
-              </p>
-            </div>
-          </div>
-
-          {/* Visual Showcase Auto-Sliding Carousel - 4 Desktop Items */}
-          <AboutGallerySlider images={aboutSliderImages} autoPlayInterval={3000} transitionDuration={800} />
-        </div>
+      {/* Visual Showcase Auto-Sliding Carousel */}
+      <section className="about-gallery-section container">
+        <AboutGallerySlider images={aboutSliderImages} autoPlayInterval={3000} transitionDuration={800} />
       </section>
 
       {/* Core Philosophy Section */}

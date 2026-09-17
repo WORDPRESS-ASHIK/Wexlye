@@ -1,8 +1,5 @@
-/* Services Page Styles */
-.services-hero-section {
-  padding-top: clamp(140px, 15vw, 190px);
-  background-color: var(--bg-primary);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+.services-deck-section {
+  padding-top: clamp(40px, 6vw, 70px);
   padding-bottom: clamp(60px, 8vw, 100px);
 }
 

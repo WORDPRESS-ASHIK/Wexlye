@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from '../context/RouterContext';
+import { PageHero } from '../components/PageHero';
 import { PRICING_PLANS } from '../data/faqs';
 import { FAQSection } from '../components/FAQSection';
 import { ContactCTA } from '../components/ContactCTA';
@@ -34,25 +35,20 @@ export const PricingPage: React.FC = () => {
 
   return (
     <div className="pricing-page-view">
-      {/* Pricing Hero matching texan.agency */}
-      <section className="pricing-hero-section section-padding-top">
-        <div className="container">
-          <div className="pricing-hero-grid">
-            <div className="pricing-hero-titles">
-              <h1 className="pricing-hero-title">quality design</h1>
-              <hr className="texan-divider" />
-              <h2 className="pricing-hero-sub">pricing</h2>
-            </div>
+      {/* 4. PRICING PAGE HERO */}
+      <PageHero
+        eyebrow="PRICING."
+        heading={
+          <>
+            SIMPLE, TRANSPARENT PRICING FOR DIGITAL <span className="highlight-green">GROWTH.</span>
+          </>
+        }
+        subtitle="Choose the right level of support for your goals, from focused digital projects to ongoing growth partnerships. Every engagement is tailored around what your business actually needs."
+      />
 
-            <div className="pricing-hero-desc">
-              <p className="lead">
-                Flexible pricing plans tailored to meet your needs—affordable solutions for web development, UI/UX design, mobile apps, and branding.
-              </p>
-            </div>
-          </div>
-
-          {/* Pricing Cards Grid */}
-          <div className="pricing-cards-grid">
+      {/* Pricing Cards Grid */}
+      <section className="pricing-plans-section container">
+        <div className="pricing-cards-grid">
             {PRICING_PLANS.map((plan) => (
               <div 
                 key={plan.id} 
@@ -103,7 +99,6 @@ export const PricingPage: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
       </section>
 
       {/* Pricing FAQs & CTA */}

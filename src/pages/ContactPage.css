@@ -1,5 +1,4 @@
 .contact-page {
-  padding-top: var(--header-height);
   background-color: var(--bg-primary);
   min-height: 100vh;
 }

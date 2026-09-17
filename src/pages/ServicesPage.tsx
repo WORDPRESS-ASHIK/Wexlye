@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from '../context/RouterContext';
+import { PageHero } from '../components/PageHero';
 import { SERVICES_DATA } from '../data/services';
 import { FAQSection } from '../components/FAQSection';
 import { ContactCTA } from '../components/ContactCTA';
@@ -11,25 +12,20 @@ export const ServicesPage: React.FC = () => {
 
   return (
     <div className="services-page-view">
-      {/* Services Hero matching texan.agency */}
-      <section className="services-hero-section section-padding-top">
-        <div className="container">
-          <div className="services-hero-grid">
-            <div className="services-hero-titles">
-              <h1 className="services-hero-title">Service</h1>
-              <hr className="texan-divider" />
-              <h2 className="services-hero-sub">you needs</h2>
-            </div>
+      {/* 2. SERVICES PAGE HERO */}
+      <PageHero
+        eyebrow="WHAT WE DO."
+        heading={
+          <>
+            STRATEGY, DESIGN, DEVELOPMENT & <span className="highlight-green">GROWTH</span> — ALL UNDER ONE ROOF.
+          </>
+        }
+        subtitle="From strategy and branding to web development, SEO and digital marketing, we bring the right expertise together to create digital solutions built around your business goals."
+      />
 
-            <div className="services-hero-desc">
-              <p className="lead">
-                We specialize in web design, development, mobile apps, and UI/UX design, delivering innovative, user-friendly solutions to bring your vision to life.
-              </p>
-            </div>
-          </div>
-
-          {/* Sticky Stacking Service Cards matching reference */}
-          <div className="services-stack-deck">
+      {/* Sticky Stacking Service Cards */}
+      <section className="services-deck-section container">
+        <div className="services-stack-deck">
             {SERVICES_DATA.map((service, index) => {
               const stickyOffset = 75 + index * 35;
 
@@ -74,7 +70,6 @@ export const ServicesPage: React.FC = () => {
               );
             })}
           </div>
-        </div>
       </section>
 
       {/* FAQ & CTA */}

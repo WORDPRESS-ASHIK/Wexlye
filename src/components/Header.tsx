@@ -25,7 +25,8 @@ export const Header: React.FC = () => {
   }, [currentPath]);
 
   // Determine if current route has a dark top hero
-  const isDarkHeroPage = currentPath === '/team' || currentPath === '/our-team';
+  const darkHeroRoutes = ['/team', '/our-team', '/about', '/services', '/work', '/pricing', '/contact'];
+  const isDarkHeroPage = darkHeroRoutes.includes(currentPath);
 
   const headerClasses = [
     'site-header',

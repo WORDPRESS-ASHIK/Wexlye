@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from '../context/RouterContext';
+import { PageHero } from '../components/PageHero';
 import { PROJECTS_DATA } from '../data/projects';
 import { ContactCTA } from '../components/ContactCTA';
 import { ArrowRight } from 'lucide-react';
@@ -19,25 +20,21 @@ export const WorkPage: React.FC = () => {
 
   return (
     <div className="work-page-view">
-      {/* Work Hero matching texan.agency */}
-      <section className="work-hero-section section-padding-top">
-        <div className="container">
-          <div className="work-hero-grid">
-            <div className="work-hero-titles">
-              <h3 className="work-hero-super">Explore our</h3>
-              <hr className="texan-divider" />
-              <h1 className="work-hero-title">Case Study</h1>
-            </div>
+      {/* 3. WORK PAGE HERO */}
+      <PageHero
+        eyebrow="SELECTED WORK."
+        heading={
+          <>
+            WORK THAT TURNS IDEAS INTO REAL-WORLD <span className="highlight-green">IMPACT.</span>
+          </>
+        }
+        subtitle="Explore selected digital experiences, brands, websites and growth projects created to solve problems, strengthen businesses and make brands stand out."
+      />
 
-            <div className="work-hero-desc">
-              <p className="lead">
-                Empowering businesses with cutting-edge UI/UX design, web development, mobile app solutions, and branding strategies to drive growth and engagement.
-              </p>
-            </div>
-          </div>
-
-          {/* Filter Pills */}
-          <div className="work-filter-pills">
+      {/* Main Work Content (Filter Pills & Stacking Cards) */}
+      <section className="work-content-section container">
+        {/* Filter Pills */}
+        <div className="work-filter-pills">
             {filterCategories.map((cat) => (
               <button
                 key={cat}
@@ -98,7 +95,6 @@ export const WorkPage: React.FC = () => {
               );
             })}
           </div>
-        </div>
       </section>
 
       <ContactCTA />

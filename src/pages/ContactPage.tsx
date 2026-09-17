@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { PageHero } from '../components/PageHero';
 import { Mail, Phone, MapPin, CheckCircle2, Clock, Sparkles } from 'lucide-react';
 import { agencyContacts, socialLinks } from '../data/navigation';
 import './ContactPage.css';
@@ -21,17 +22,16 @@ export const ContactPage: React.FC = () => {
 
   return (
     <div className="contact-page">
-      {/* Page Header */}
-      <section className="contact-hero">
-        <div className="container">
-          <h1 className="contact-title">
-            Let's build something <span className="highlight-text">iconic</span> together.
-          </h1>
-          <p className="contact-subtitle">
-            Whether you are launching a breakout brand or scaling an enterprise platform, our team in Dhaka is ready to collaborate. Reach out directly or fill out our contact form below.
-          </p>
-        </div>
-      </section>
+      {/* 5. CONTACT PAGE HERO */}
+      <PageHero
+        eyebrow="GET IN TOUCH."
+        heading={
+          <>
+            LET'S BUILD SOMETHING ICONIC <span className="highlight-green">TOGETHER.</span>
+          </>
+        }
+        subtitle="Whether you're launching a new brand, building a digital experience or looking to accelerate your online growth, our team is ready to collaborate."
+      />
 
       {/* Main Form & Info Grid */}
       <section className="contact-content-section">

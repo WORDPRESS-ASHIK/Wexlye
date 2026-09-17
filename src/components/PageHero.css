@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Global Page Hero Section — Exact match to Team Page Hero System
+   ========================================================================== */
+
+.page-hero-section {
+  padding-top: clamp(140px, 15vw, 190px);
+  padding-bottom: clamp(60px, 8vw, 100px);
+  background-color: #000000;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.page-hero-eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #a1a1aa;
+  margin-bottom: 1.5rem;
+}
+
+.page-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7.5vw, 6.2rem);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  max-width: 1000px;
+}
+
+.page-hero-title .highlight-green {
+  color: #39FF14;
+}
+
+.page-hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: #a1a1aa;
+  line-height: 1.6;
+  max-width: 620px;
+  font-weight: 400;
+  background: rgba(57, 255, 20, 0.06);
+  border-left: 2px solid #39FF14;
+  padding: 12px 18px;
+}
