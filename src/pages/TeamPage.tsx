@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { User, ArrowUpRight } from 'lucide-react';
+import { User } from 'lucide-react';
 import './TeamPage.css';
 
 export const TeamPage: React.FC = () => {
@@ -45,23 +45,17 @@ export const TeamPage: React.FC = () => {
               </div>
 
               <div className="team-info">
-                <h3 className="team-member-name">[TEAM MEMBER NAME]</h3>
+                <h3 className="team-member-name">MD. ASHIK KHAN</h3>
                 <div className="team-member-role">
-                  <span>[JOB TITLE]</span>
+                  <span>Founder</span>
                   <span className="role-badge-dot"></span>
                 </div>
                 <p className="team-member-bio">
-                  "[SHORT BIO GOES HERE]"
+                  Leading WEXLYE with a vision to build meaningful digital experiences, strong brands, and scalable digital solutions. As Founder, Ashik focuses on strategy, creativity, technology, and delivering measurable value for clients.
                 </p>
                 <div className="team-social-links">
-                  <a href="#linkedin" onClick={(e) => e.preventDefault()} className="team-social-anchor">
-                    <span>LinkedIn</span>
-                    <ArrowUpRight size={14} />
-                  </a>
-                  <a href="#twitter" onClick={(e) => e.preventDefault()} className="team-social-anchor">
-                    <span>Twitter / X</span>
-                    <ArrowUpRight size={14} />
-                  </a>
+                  <span className="team-social-item">Facebook</span>
+                  <span className="team-social-item">Instagram</span>
                 </div>
               </div>
             </div>
@@ -78,23 +72,17 @@ export const TeamPage: React.FC = () => {
               </div>
 
               <div className="team-info">
-                <h3 className="team-member-name">[TEAM MEMBER NAME]</h3>
+                <h3 className="team-member-name">Alim Al Razi Nihad</h3>
                 <div className="team-member-role">
-                  <span>[JOB TITLE]</span>
+                  <span>CEO</span>
                   <span className="role-badge-dot"></span>
                 </div>
                 <p className="team-member-bio">
-                  "[SHORT BIO GOES HERE]"
+                  Driving WEXLYE’s growth through strategic leadership, creative thinking, and a strong focus on building lasting client relationships and innovative digital solutions.
                 </p>
                 <div className="team-social-links">
-                  <a href="#linkedin" onClick={(e) => e.preventDefault()} className="team-social-anchor">
-                    <span>LinkedIn</span>
-                    <ArrowUpRight size={14} />
-                  </a>
-                  <a href="#twitter" onClick={(e) => e.preventDefault()} className="team-social-anchor">
-                    <span>Twitter / X</span>
-                    <ArrowUpRight size={14} />
-                  </a>
+                  <span className="team-social-item">Facebook</span>
+                  <span className="team-social-item">Instagram</span>
                 </div>
               </div>
             </div>
