@@ -15,11 +15,12 @@ import { CaseStudyDetailPage } from './pages/CaseStudyDetailPage';
 import { PricingPage } from './pages/PricingPage';
 import { ContactPage } from './pages/ContactPage';
 import { LegalPage } from './pages/LegalPage';
+import { TeamPage } from './pages/TeamPage';
 
 // Data for route param lookups
 import { SERVICES_DATA } from './data/services';
 import { PROJECTS_DATA } from './data/projects';
-import { ArrowLeft, Home } from 'lucide-react';
+import { Home } from 'lucide-react';
 
 const NotFoundView: React.FC = () => {
   const { navigate } = useRouter();
@@ -58,28 +59,18 @@ const NotFoundView: React.FC = () => {
         fontSize: '1.1rem',
         maxWidth: '520px',
         lineHeight: 1.6,
-        marginBottom: '36px'
+        margin: '0 auto 32px'
       }}>
-        The page or project you're seeking may have been renamed, relocated, or is confidential under NDA.
+        The page you are looking for doesn't exist or has been moved.
       </p>
-      <div style={{ display: 'flex', gap: '16px' }}>
-        <button
-          className="btn btn-primary"
-          onClick={() => navigate('/')}
-          style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}
-        >
-          <Home size={18} />
-          <span>Return to Homepage</span>
-        </button>
-        <button
-          className="btn btn-secondary"
-          onClick={() => navigate('/work')}
-          style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}
-        >
-          <ArrowLeft size={18} />
-          <span>View All Work</span>
-        </button>
-      </div>
+      <button
+        onClick={() => navigate('/')}
+        className="btn-quote"
+        style={{ padding: '12px 28px', fontSize: '1rem' }}
+      >
+        <Home size={18} />
+        <span>Return Home</span>
+      </button>
     </div>
   );
 };
@@ -96,6 +87,7 @@ const AppContent: React.FC = () => {
     if (path === '/about' || path === '/about-us') return <AboutPage />;
     if (path === '/services') return <ServicesPage />;
     if (path === '/work' || path === '/projects') return <WorkPage />;
+    if (path === '/team' || path === '/our-team') return <TeamPage />;
     if (path === '/pricing') return <PricingPage />;
     if (path === '/contact') return <ContactPage />;
     if (path === '/privacy-policy') return <LegalPage type="privacy" />;

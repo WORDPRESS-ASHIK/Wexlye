@@ -20,6 +20,7 @@ const FOOTER_SERVICES: FooterServiceLink[] = [
 
 const FOOTER_QUICK_LINKS = [
   { label: 'Home', href: '/' },
+  { label: 'Team', href: '/team' },
   { label: 'Contact', href: '/contact' },
   { label: 'Privacy Policy', href: '/privacy-policy' },
   { label: 'Terms & Conditions', href: '/terms-condition' },

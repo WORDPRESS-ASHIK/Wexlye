@@ -9,6 +9,7 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'Work', href: '/work' },
+  { label: 'Team', href: '/team' },
   { label: 'Pricing', href: '/pricing' },
 ];
 
@@ -17,6 +18,7 @@ export const ALL_NAV_ITEMS: NavItem[] = [
   { label: 'About Us', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'Work', href: '/work' },
+  { label: 'Team', href: '/team' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Contact', href: '/contact' },
 ];
