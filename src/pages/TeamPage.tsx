@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useRouter } from '../context/RouterContext';
+import { PageHero } from '../components/PageHero';
 import { User, ArrowRight } from 'lucide-react';
 import './TeamPage.css';
 
@@ -16,20 +17,16 @@ export const TeamPage: React.FC = () => {
   return (
     <div className="team-page">
       {/* 2. TEAM HERO */}
-      <section className="team-hero-section">
-        <div className="container">
-          <span className="team-hero-eyebrow">
-            THE PEOPLE BEHIND WEXLYE.
-          </span>
-          <h1 className="team-hero-title">
+      <PageHero
+        eyebrow="THE PEOPLE BEHIND WEXLYE."
+        heading={
+          <>
             MEET THE TEAM<br />
             BEHIND <span className="highlight-green">WEXLYE.</span>
-          </h1>
-          <p className="team-hero-subtitle">
-            Two people. One vision. Building digital experiences, brands, and technology that move businesses forward.
-          </p>
-        </div>
-      </section>
+          </>
+        }
+        subtitle="Two people. One vision. Building digital experiences, brands, and technology that move businesses forward."
+      />
 
       {/* 3 & 4 & 5. MAIN TEAM SECTION */}
       <section className="team-members-section">
