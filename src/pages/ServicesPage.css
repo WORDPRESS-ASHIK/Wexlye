@@ -118,18 +118,18 @@
 }
 
 .btn-pill-whatsapp {
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  color: #111827;
+  background-color: #39FF14;
+  border: 1px solid #39FF14;
+  color: #000000;
   font-weight: 600;
 }
 
 .btn-pill-whatsapp:hover {
-  background-color: #25D366;
-  border-color: #25D366;
-  color: #ffffff;
+  background-color: #21DC00;
+  border-color: #21DC00;
+  color: #000000;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+  box-shadow: 0 6px 20px rgba(57, 255, 20, 0.35);
 }
 
 /* Service Detail View Styles */
