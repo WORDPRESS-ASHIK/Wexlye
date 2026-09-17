@@ -13,7 +13,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type }) => {
   const isPrivacy = type === 'privacy';
   const title = isPrivacy ? 'Privacy Policy' : 'Terms & Conditions';
   const subtitle = isPrivacy
-    ? 'Last updated: January 15, 2026. How Texan Agency collects, safeguards, and respects your confidential data.'
+    ? 'Last updated: January 15, 2026. How WEXLYE collects, safeguards, and respects your confidential data.'
     : 'Last updated: January 15, 2026. Rules, agreements, and intellectual property terms governing our creative engagements.';
 
   return (
@@ -51,7 +51,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type }) => {
               <section className="legal-section">
                 <h2>1. Introduction & Scope</h2>
                 <p>
-                  Texan Agency ("we", "our", or "us"), headquartered in Austin, Texas, is committed to safeguarding the privacy and confidential intellectual property of our prospective clients, agency partners, and website visitors. This policy outlines how information is collected, processed, and preserved when you engage with our web platforms, submit project briefs, or enter into creative service agreements.
+                  WEXLYE ("we", "our", or "us"), headquartered in Dhaka, Bangladesh, is committed to safeguarding the privacy and confidential intellectual property of our prospective clients, agency partners, and website visitors. This policy outlines how information is collected, processed, and preserved when you engage with our web platforms, submit project briefs, or enter into creative service agreements.
                 </p>
               </section>
 
@@ -70,7 +70,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type }) => {
               <section className="legal-section">
                 <h2>3. Non-Disclosure & Confidentiality</h2>
                 <p>
-                  Every brand engagement, deck, wireframe, or strategic document shared with Texan Agency is handled under strict professional confidentiality. We routinely sign bilateral Non-Disclosure Agreements (NDAs) prior to onboarding. We do not sell, rent, or monetize your contact or business intelligence to third parties.
+                  Every brand engagement, deck, wireframe, or strategic document shared with WEXLYE is handled under strict professional confidentiality. We routinely sign bilateral Non-Disclosure Agreements (NDAs) prior to onboarding. We do not sell, rent, or monetize your contact or business intelligence to third parties.
                 </p>
               </section>
 
@@ -91,7 +91,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type }) => {
               <section className="legal-section">
                 <h2>6. Your Data Rights</h2>
                 <p>
-                  Under applicable laws including GDPR and CCPA, you retain full rights to request access to your submitted data, demand immediate erasure, or request complete porting of your project briefs. To exercise these rights, email us at <a href="mailto:privacy@texan.agency">privacy@texan.agency</a>.
+                  Under applicable data protection laws, you retain full rights to request access to your submitted data, demand immediate erasure, or request complete porting of your project briefs. To exercise these rights, email us at <a href="mailto:info@wexlye.com">info@wexlye.com</a>.
                 </p>
               </section>
             </>
@@ -100,7 +100,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type }) => {
               <section className="legal-section">
                 <h2>1. Terms Overview</h2>
                 <p>
-                  By accessing the website and digital properties of Texan Agency, or retaining our design and engineering services, you agree to be bound by these Terms & Conditions. If you do not accept these terms in full, you must discontinue use of our site and services immediately.
+                  By accessing the website and digital properties of WEXLYE, or retaining our design and engineering services, you agree to be bound by these Terms & Conditions. If you do not accept these terms in full, you must discontinue use of our site and services immediately.
                 </p>
               </section>
 
@@ -118,7 +118,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type }) => {
               <section className="legal-section">
                 <h2>3. Intellectual Property Ownership</h2>
                 <p>
-                  Upon receipt of full and final payment for any project, 100% of the worldwide intellectual property rights, final design files (Figma files, vectors, typography licenses transferred to client), and production source code transfer completely to the client. Texan Agency retains the customary right to display non-sensitive project artifacts in our portfolio, case studies, and industry award submissions unless explicitly restricted by an active NDA.
+                  Upon receipt of full and final payment for any project, 100% of the worldwide intellectual property rights, final design files (Figma files, vectors, typography licenses transferred to client), and production source code transfer completely to the client. WEXLYE retains the customary right to display non-sensitive project artifacts in our portfolio, case studies, and industry award submissions unless explicitly restricted by an active NDA.
                 </p>
               </section>
 
@@ -132,7 +132,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ type }) => {
               <section className="legal-section">
                 <h2>5. Limitation of Liability</h2>
                 <p>
-                  In no event shall Texan Agency or its directors be liable for any indirect, consequential, or incidental damages arising out of third-party hosting outages, domain registrar delays, or third-party API deprecations beyond our reasonable engineering control.
+                  In no event shall WEXLYE or its directors be liable for any indirect, consequential, or incidental damages arising out of third-party hosting outages, domain registrar delays, or third-party API deprecations beyond our reasonable engineering control.
                 </p>
               </section>
 

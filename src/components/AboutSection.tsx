@@ -9,8 +9,8 @@ export const AboutSection: React.FC = () => {
   return (
     <section className="about-section section-padding">
       <div className="container about-container">
-        {/* Eyebrow */}
-        <span className="section-eyebrow">about us</span>
+        {/* Section Heading Label */}
+        <span className="section-eyebrow">About Us</span>
 
         {/* Lead Headline with Yellow Highlight */}
         <div className="about-lead-wrapper">

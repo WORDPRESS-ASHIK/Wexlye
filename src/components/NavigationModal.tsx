@@ -94,7 +94,7 @@ export const NavigationModal: React.FC<NavigationModalProps> = ({ isOpen, onClos
     <div ref={overlayRef} className="nav-fullscreen-overlay" aria-hidden={!isOpen}>
       <div className="nav-overlay-header">
         <div className="nav-logo" onClick={() => handleLinkClick('/')}>
-          <span className="logo-texan">TEXAN</span>
+          <span className="logo-texan">WEXLYE</span>
           <span className="logo-dot">.</span>
         </div>
         <button 
@@ -165,15 +165,16 @@ export const NavigationModal: React.FC<NavigationModalProps> = ({ isOpen, onClos
           <div className="info-block info-fade">
             <span className="info-label">Follow Us</span>
             <div className="info-social-pills">
-              {AGENCY_INFO.socials.map((social) => (
+              {AGENCY_INFO.socials.map((item) => (
                 <a
-                  key={social.name}
-                  href={social.href}
+                  key={item.name}
+                  href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-pill"
+                  data-cursor="pointer"
                 >
-                  <span>{social.name}</span>
+                  <span>{item.name}</span>
                   <ArrowUpRight size={14} />
                 </a>
               ))}

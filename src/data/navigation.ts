@@ -18,8 +18,6 @@ export const ALL_NAV_ITEMS: NavItem[] = [
   { label: 'Services', href: '/services' },
   { label: 'Work', href: '/work' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Career', href: '/career' },
-  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -33,27 +31,26 @@ export const SERVICE_NAV_ITEMS: NavItem[] = [
 
 export const QUICK_LINKS: NavItem[] = [
   { label: 'Home', href: '/' },
-  { label: 'Career', href: '/career' },
-  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
   { label: 'Privacy Policy', href: '/privacy-policy' },
   { label: 'Terms & Conditions', href: '/terms-condition' },
 ];
 
 export const AGENCY_INFO = {
-  name: 'Texan Agency',
+  name: 'WEXLYE',
   tagline: 'Digital Design Agency',
   description: 'Developing visionary solutions that spark significant progress.',
-  phone: '+8801516175657',
-  phoneDisplay: '+880 151 617 5657',
-  email: 'hello@texan.agency',
-  address: 'Austin, Texas, USA',
-  copyright: 'Copyright © 2026 Texan Agency, All rights reserved.',
+  phone: '01580958867',
+  phoneDisplay: '01580958867',
+  email: 'info@wexlye.com',
+  address: 'Dhaka, Bangladesh',
+  copyright: 'Copyright © 2026 WEXLYE, All rights reserved.',
   socials: [
-    { name: 'Facebook', href: 'https://www.facebook.com/texan.agency/' },
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/texan-agency/' },
-    { name: 'Dribbble', href: 'https://dribbble.com/texanagency' },
-    { name: 'Behance', href: 'https://www.behance.net/texanagency' },
+    { name: 'Facebook', href: 'https://www.facebook.com/wexlye' },
+    { name: 'Instagram', href: 'https://www.instagram.com/wexlye.ig' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/wexlye/' },
+    { name: 'Behance', href: 'https://www.behance.net/wexlye' },
+    { name: 'Dribbble', href: 'https://dribbble.com/wexlye' },
   ],
 };
 

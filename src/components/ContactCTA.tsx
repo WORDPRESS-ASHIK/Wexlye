@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { AGENCY_INFO } from '../data/navigation';
 import { Phone, Mail, MapPin, ArrowRight, CheckCircle2 } from 'lucide-react';
 import './ContactCTA.css';
 
@@ -28,6 +27,10 @@ export const ContactCTA: React.FC = () => {
       newErrors.email = 'Please enter a valid email address.';
     }
 
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'This field is required.';
+    }
+
     if (!formData.message.trim()) {
       newErrors.message = 'This field is required.';
     }
@@ -42,65 +45,79 @@ export const ContactCTA: React.FC = () => {
 
     setIsSubmitting(true);
 
-    // Simulate reliable API submission
+    // Simulate reliable submission
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 800);
+    }, 600);
   };
 
   return (
-    <section className="contact-cta-section section-padding" id="contact-form">
+    <section className="contact-cta-section" id="contact-form">
       <div className="container contact-cta-container">
-        {/* Left Column: Brand Info & Direct Contacts */}
-        <div className="contact-info-col">
-          <div className="contact-brand-titles">
-            <h2 className="cta-brand-word">Texan</h2>
-            <h2 className="cta-brand-word">Agency</h2>
+        {/* LEFT COLUMN: Black rounded contact information card */}
+        <div className="contact-black-card">
+          {/* Brand Heading: WEXLYE */}
+          <div className="card-brand-header">
+            <h2 className="card-brand-title">
+              <span className="brand-yellow">WEXLYE</span>
+            </h2>
           </div>
 
-          <p className="cta-subheading">Schedule a call with us to see if we can help</p>
-          <hr className="texan-divider" />
+          {/* Card Description */}
+          <p className="card-schedule-desc">
+            Schedule a call with us to see if we can help
+          </p>
 
-          <ul className="cta-contact-list">
-            <li>
-              <a href={`tel:${AGENCY_INFO.phone}`} className="cta-contact-item">
-                <div className="cta-icon-box">
-                  <Phone size={18} />
+          {/* 2px White Divider */}
+          <div className="card-white-divider" />
+
+          {/* Three Contact Rows */}
+          <div className="card-contacts-stack">
+            {/* 1. Phone */}
+            <div className="card-contact-row">
+              <a href="tel:01580958867" className="card-contact-link">
+                <div className="card-icon-wrap">
+                  <Phone size={38} strokeWidth={1.5} className="card-contact-icon" />
                 </div>
-                <span>{AGENCY_INFO.phoneDisplay}</span>
+                <span className="card-contact-value">01580958867</span>
               </a>
-            </li>
-            <li>
-              <a href={`mailto:${AGENCY_INFO.email}`} className="cta-contact-item">
-                <div className="cta-icon-box">
-                  <Mail size={18} />
+            </div>
+
+            {/* 2. Email */}
+            <div className="card-contact-row">
+              <a href="mailto:info@wexlye.com" className="card-contact-link">
+                <div className="card-icon-wrap">
+                  <Mail size={38} strokeWidth={1.5} className="card-contact-icon" />
                 </div>
-                <span>{AGENCY_INFO.email}</span>
+                <span className="card-contact-value">info@wexlye.com</span>
               </a>
-            </li>
-            <li>
-              <div className="cta-contact-item no-link">
-                <div className="cta-icon-box">
-                  <MapPin size={18} />
+            </div>
+
+            {/* 3. Location */}
+            <div className="card-contact-row">
+              <div className="card-contact-link no-pointer">
+                <div className="card-icon-wrap">
+                  <MapPin size={38} strokeWidth={1.5} className="card-contact-icon" />
                 </div>
-                <span>{AGENCY_INFO.address}</span>
+                <span className="card-contact-value">Dhaka, Bangladesh</span>
               </div>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
 
-        {/* Right Column: Interactive Form matching Metform */}
-        <div className="contact-form-col">
+        {/* RIGHT COLUMN: Minimal contact form directly on white background */}
+        <div className="contact-form-area">
           {isSubmitted ? (
-            <div className="form-success-banner animate-fade-in-up">
+            <div className="form-success-banner">
               <CheckCircle2 size={48} className="success-icon" />
               <h3 className="success-title">Message Sent Successfully!</h3>
               <p className="success-text">
-                Thank you for reaching out to Texan Agency. Our strategy team will review your inquiry and respond within 24 hours.
+                Thank you for reaching out to WEXLYE. Our strategy team will review your message and respond within 24 hours.
               </p>
               <button
+                type="button"
                 className="btn-pill btn-pill-dark"
                 onClick={() => setIsSubmitted(false)}
               >
@@ -108,67 +125,69 @@ export const ContactCTA: React.FC = () => {
               </button>
             </div>
           ) : (
-            <form className="texan-contact-form" onSubmit={handleSubmit} noValidate>
-              {/* Name field */}
-              <div className="form-group">
+            <form className="texan-minimal-form" onSubmit={handleSubmit} noValidate>
+              {/* Field 1: Name */}
+              <div className="minimal-field-group">
                 <input
                   type="text"
-                  className={`form-input ${errors.name ? 'error' : ''}`}
+                  className={`minimal-input ${errors.name ? 'has-error' : ''}`}
                   placeholder="Your Name..."
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   aria-invalid={!!errors.name}
                 />
-                {errors.name && <span className="form-error-msg">{errors.name}</span>}
+                {errors.name && <span className="minimal-error-msg">{errors.name}</span>}
               </div>
 
-              {/* Email field */}
-              <div className="form-group">
+              {/* Field 2: Email */}
+              <div className="minimal-field-group">
                 <input
                   type="email"
-                  className={`form-input ${errors.email ? 'error' : ''}`}
+                  className={`minimal-input ${errors.email ? 'has-error' : ''}`}
                   placeholder="Enter Your Email..."
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   aria-invalid={!!errors.email}
                 />
-                {errors.email && <span className="form-error-msg">{errors.email}</span>}
+                {errors.email && <span className="minimal-error-msg">{errors.email}</span>}
               </div>
 
-              {/* Subject field */}
-              <div className="form-group">
+              {/* Field 3: Subject */}
+              <div className="minimal-field-group">
                 <input
                   type="text"
-                  className="form-input"
+                  className={`minimal-input ${errors.subject ? 'has-error' : ''}`}
                   placeholder="Subject..."
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  aria-invalid={!!errors.subject}
                 />
+                {errors.subject && <span className="minimal-error-msg">{errors.subject}</span>}
               </div>
 
-              {/* Message field */}
-              <div className="form-group">
+              {/* Field 4: Message */}
+              <div className="minimal-field-group">
                 <textarea
-                  className={`form-input form-textarea ${errors.message ? 'error' : ''}`}
+                  className={`minimal-input minimal-textarea ${errors.message ? 'has-error' : ''}`}
                   placeholder="Your Message..."
-                  rows={5}
+                  rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   aria-invalid={!!errors.message}
                 />
-                {errors.message && <span className="form-error-msg">{errors.message}</span>}
+                {errors.message && <span className="minimal-error-msg">{errors.message}</span>}
               </div>
 
-              {/* Submit Button */}
-              <div className="form-action-row">
+              {/* Submit Button (Bottom-Right) */}
+              <div className="minimal-action-row">
                 <button
                   type="submit"
-                  className="btn-pill btn-pill-gold form-submit-btn"
+                  className="minimal-submit-pill"
                   disabled={isSubmitting}
                   data-cursor="pointer"
                 >
                   <span>{isSubmitting ? 'Sending...' : 'Submit'}</span>
-                  <ArrowRight size={18} />
+                  <ArrowRight size={24} className="submit-arrow-icon" />
                 </button>
               </div>
             </form>

@@ -20,15 +20,17 @@ export const Hero: React.FC = () => {
   return (
     <section ref={heroRef} className="hero-section">
       <div className="hero-container">
-        {/* ONLY the three typography words: Design. on row 1, Develop. and Deliver. on row 2 */}
+        {/* Hero typography words: Design. and Develop. in row-top, Deliver. in row-bottom */}
         <div className="hero-heading-block">
-          <h1 ref={title1Ref} className="hero-word hero-word-design">
-            Design.
-          </h1>
-          <div className="hero-row-second">
+          <div className="hero-row-top">
+            <h1 ref={title1Ref} className="hero-word hero-word-design">
+              Design.
+            </h1>
             <h2 ref={title2Ref} className="hero-word hero-word-develop">
               Develop.
             </h2>
+          </div>
+          <div className="hero-row-bottom">
             <h2 ref={title3Ref} className="hero-word hero-word-deliver">
               Deliver.
             </h2>

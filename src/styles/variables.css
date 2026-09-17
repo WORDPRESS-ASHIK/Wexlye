@@ -12,11 +12,17 @@
   --text-light: #ffffff;
   --text-light-muted: #a0a0a0;
   
-  /* The signature Texan yellow/gold highlights */
-  --accent-yellow: #FCCE10;
-  --accent-yellow-hover: #FFDE00;
-  --accent-gold-soft: #fff6cc;
-  --accent-warm: #BC997E;
+  /* Brand Accent Colors: Primary Neon Green #39FF14 */
+  --accent-yellow: #39FF14;
+  --accent-green: #39FF14;
+  --accent-blue: #39FF14;
+  --accent-yellow-hover: #21DC00;
+  --accent-green-hover: #21DC00;
+  --accent-blue-hover: #21DC00;
+  --accent-gold-soft: #E9FFE5;
+  --accent-green-soft: #E9FFE5;
+  --accent-blue-soft: #E9FFE5;
+  --accent-warm: #2bd407;
   
   /* Borders & Dividers */
   --border-color: rgba(0, 0, 0, 0.1);

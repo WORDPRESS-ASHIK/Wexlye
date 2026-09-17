@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Clock, Sparkles } from 'lucide-react';
+import { Mail, Phone, MapPin, CheckCircle2, Clock, Sparkles } from 'lucide-react';
 import { agencyContacts, socialLinks } from '../data/navigation';
 import './ContactPage.css';
 
@@ -9,47 +9,26 @@ export const ContactPage: React.FC = () => {
     name: '',
     email: '',
     phone: '',
-    service: 'Branding & Identity',
-    budget: '$5k - $10k',
+    subject: '',
     message: ''
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email) return;
+    if (!formData.name || !formData.email || !formData.message) return;
     setSubmitted(true);
   };
-
-  const services = [
-    'Branding & Identity',
-    'UI/UX & Product Design',
-    'Web Development',
-    'Mobile App Dev',
-    'Digital Consultation',
-    'Full Retainer Partnership'
-  ];
-
-  const budgets = [
-    'Under $5k',
-    '$5k - $10k',
-    '$10k - $25k',
-    '$25k+'
-  ];
 
   return (
     <div className="contact-page">
       {/* Page Header */}
       <section className="contact-hero">
         <div className="container">
-          <div className="contact-hero-tag">
-            <span className="live-dot"></span>
-            <span>Now Accepting New Projects</span>
-          </div>
           <h1 className="contact-title">
             Let's build something <span className="highlight-text">iconic</span> together.
           </h1>
           <p className="contact-subtitle">
-            Whether you are launching a breakout brand or scaling an enterprise platform, our team in Austin is ready to collaborate. Reach out directly or fill out our project brief below.
+            Whether you are launching a breakout brand or scaling an enterprise platform, our team in Dhaka is ready to collaborate. Reach out directly or fill out our contact form below.
           </p>
         </div>
       </section>
@@ -60,10 +39,10 @@ export const ContactPage: React.FC = () => {
           {/* Left: Contact Info & Channels */}
           <div className="contact-info-col">
             <div className="info-card">
-              <span className="info-category">Austin Headquarters</span>
+              <span className="info-category">Headquarters</span>
               <h3>Get In Touch Direct</h3>
               <p className="info-desc">
-                We typically respond within 24 business hours. If you're in Austin, coffee is on us.
+                We typically respond within 24 business hours. If you're in Dhaka, coffee is on us.
               </p>
 
               <div className="contact-channels-list">
@@ -137,83 +116,43 @@ export const ContactPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Right: Interactive Project Brief Form */}
+          {/* Right: Clean Simple Contact Form */}
           <div className="contact-form-col">
             <div className="contact-form-wrapper">
               {submitted ? (
                 <div className="form-success-state">
                   <CheckCircle2 size={64} className="success-icon" />
-                  <h2>Message Received!</h2>
+                  <h2>Thanks! Your message has been sent.</h2>
                   <p>
-                    Thank you, <strong>{formData.name}</strong>. Our lead director will review your brief and respond back to <strong>{formData.email}</strong> within 24 hours.
+                    Thank you, <strong>{formData.name}</strong>. We have received your message and will get back to <strong>{formData.email}</strong> shortly.
                   </p>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-primary submit-btn"
                     onClick={() => {
                       setSubmitted(false);
                       setFormData({
                         name: '',
                         email: '',
                         phone: '',
-                        service: 'Branding & Identity',
-                        budget: '$5k - $10k',
+                        subject: '',
                         message: ''
                       });
                     }}
                   >
-                    Send Another Brief
+                    Send Another Message →
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="project-brief-form">
-                  <div className="form-heading">
-                    <h2>Project Discovery Brief</h2>
-                    <p>Fill out the fields below to give us context on your scope and timeline.</p>
-                  </div>
-
-                  {/* Service selection pills */}
-                  <div className="form-group">
-                    <label className="field-label">What do you need help with?</label>
-                    <div className="pill-select-grid">
-                      {services.map((srv) => (
-                        <button
-                          key={srv}
-                          type="button"
-                          className={`pill-option-btn ${formData.service === srv ? 'active' : ''}`}
-                          onClick={() => setFormData({ ...formData, service: srv })}
-                        >
-                          {srv}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Budget selection pills */}
-                  <div className="form-group">
-                    <label className="field-label">Approximate Budget (USD)</label>
-                    <div className="pill-select-grid budget-grid">
-                      {budgets.map((b) => (
-                        <button
-                          key={b}
-                          type="button"
-                          className={`pill-option-btn ${formData.budget === b ? 'active' : ''}`}
-                          onClick={() => setFormData({ ...formData, budget: b })}
-                        >
-                          {b}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
+                <form onSubmit={handleSubmit} className="simple-contact-form">
                   <div className="form-row">
                     <div className="form-group">
-                      <label className="field-label" htmlFor="contact-name">Your Name *</label>
+                      <label className="field-label" htmlFor="contact-name">Full Name *</label>
                       <input
                         id="contact-name"
                         type="text"
                         required
-                        placeholder="Elon Musk"
+                        placeholder="Your Name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="form-input"
@@ -225,7 +164,7 @@ export const ContactPage: React.FC = () => {
                         id="contact-email"
                         type="email"
                         required
-                        placeholder="elon@x.com"
+                        placeholder="Your Email Address"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="form-input"
@@ -233,25 +172,38 @@ export const ContactPage: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="form-group">
-                    <label className="field-label" htmlFor="contact-phone">Phone / WhatsApp (Optional)</label>
-                    <input
-                      id="contact-phone"
-                      type="tel"
-                      placeholder="+1 (555) 000-0000"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="form-input"
-                    />
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label className="field-label" htmlFor="contact-phone">Phone / WhatsApp</label>
+                      <input
+                        id="contact-phone"
+                        type="tel"
+                        placeholder="Your Phone Number"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="form-input"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label className="field-label" htmlFor="contact-subject">Subject</label>
+                      <input
+                        id="contact-subject"
+                        type="text"
+                        placeholder="Subject"
+                        value={formData.subject}
+                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                        className="form-input"
+                      />
+                    </div>
                   </div>
 
                   <div className="form-group">
-                    <label className="field-label" htmlFor="contact-msg">Tell us about your project</label>
+                    <label className="field-label" htmlFor="contact-message">Message *</label>
                     <textarea
-                      id="contact-msg"
+                      id="contact-message"
                       rows={5}
                       required
-                      placeholder="Brief overview of goals, existing links or prototypes, milestones, and ideal launch dates..."
+                      placeholder="Tell us about your project..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="form-textarea"
@@ -259,8 +211,7 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <button type="submit" className="btn btn-primary submit-btn">
-                    <span>Submit Project Brief</span>
-                    <Send size={18} />
+                    Send Message →
                   </button>
                 </form>
               )}

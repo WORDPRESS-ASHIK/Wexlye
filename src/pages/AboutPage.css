@@ -61,66 +61,116 @@
   transform: scale(1.06);
 }
 
-/* Philosophy */
+/* Core Philosophy Section - Dark #101010 Theme */
 .about-philosophy-section {
-  background-color: var(--bg-primary);
+  background-color: #101010;
+  color: #ffffff;
+  padding-top: clamp(80px, 10vw, 130px);
+  padding-bottom: clamp(80px, 10vw, 130px);
 }
 
 .philosophy-header {
   max-width: 960px;
-  margin-bottom: 4.5rem;
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.about-philosophy-section .section-eyebrow {
+  color: #39FF14;
+  text-transform: lowercase;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  display: block;
 }
 
 .philosophy-headline {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3.5vw, 3rem);
-  font-weight: 400;
-  line-height: 1.35;
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.3;
   letter-spacing: -0.025em;
-  color: var(--text-primary);
+  color: #ffffff;
 }
 
+/* 2x2 Staggered Grid Composition */
 .values-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
 }
 
 .value-card {
-  padding: 2.25rem 1.75rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
-  background-color: #fafafa;
+  padding: clamp(2.25rem, 3.5vw, 3.2rem) clamp(1.8rem, 2.8vw, 2.75rem);
+  border-radius: var(--radius-md, 12px);
+  border: none;
   display: flex;
   flex-direction: column;
-  transition: all var(--transition-base);
+  box-sizing: border-box;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
 }
 
 .value-card:hover {
-  border-color: var(--accent-yellow);
-  background-color: #ffffff;
-  box-shadow: var(--shadow-card);
   transform: translateY(-4px);
 }
 
-.value-number {
+/* Card 01 & Card 04 - Neon Green Accent #39FF14 */
+.value-card-neon {
+  background-color: #39FF14;
+  color: #000000;
+}
+
+.value-card-neon .value-number {
   font-family: var(--font-display);
-  font-size: 2.2rem;
+  font-size: clamp(2.8rem, 4.5vw, 3.6rem);
   font-weight: 300;
-  color: var(--accent-yellow);
-  margin-bottom: 1.25rem;
+  color: #000000;
+  line-height: 1;
+  margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
 }
 
-.value-title {
-  font-size: 1.25rem;
+.value-card-neon .value-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  line-height: 1.25;
+  color: #000000;
+  margin-bottom: 1rem;
 }
 
-.value-desc {
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: var(--text-muted);
+.value-card-neon .value-desc {
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* Card 02 & Card 03 - Integrated Dark #101010 */
+.value-card-dark {
+  background-color: #101010;
+  color: #ffffff;
+}
+
+.value-card-dark .value-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 4.5vw, 3.6rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1;
+  margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.value-card-dark .value-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.value-card-dark .value-desc {
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 /* Responsive */
@@ -129,18 +179,11 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-
-  .about-gallery-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .values-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .values-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 }

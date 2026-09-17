@@ -1,0 +1,69 @@
+/* ==========================================================================
+   About Gallery Auto-Sliding Carousel / Slider
+   ========================================================================== */
+
+.about-gallery-slider-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 2rem;
+  overflow: hidden;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.about-gallery-slider-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.about-gallery-slider-track {
+  display: flex;
+  width: 100%;
+  will-change: transform;
+  cursor: grab;
+}
+
+.about-gallery-slide-item {
+  box-sizing: border-box;
+  padding: 0 0.65rem; /* Clean gap between cards */
+  flex-shrink: 0;
+}
+
+.about-gallery-img-container {
+  height: clamp(240px, 28vw, 350px);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  background-color: var(--bg-secondary, #f4f4f4);
+}
+
+.about-gallery-img-container .gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-gallery-img-container:hover .gallery-img {
+  transform: scale(1.05);
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .about-gallery-slider-track {
+    transition: none !important;
+  }
+}
+
+/* Responsive Gaps */
+@media (max-width: 768px) {
+  .about-gallery-slide-item {
+    padding: 0 0.4rem;
+  }
+}

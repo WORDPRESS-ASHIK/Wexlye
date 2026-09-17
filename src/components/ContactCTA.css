@@ -1,153 +1,269 @@
+/* ==========================================================================
+   Contact CTA Section — Exact Reference Match
+   Left Black Rounded Card + Right Minimal Underlined Form on White
+   ========================================================================== */
+
 .contact-cta-section {
-  background-color: var(--bg-primary);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background-color: #ffffff;
+  padding-top: clamp(80px, 8vw, 130px);
+  padding-bottom: clamp(80px, 8vw, 130px);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Two-column layout matching reference proportions (48% / 52%) */
 .contact-cta-container {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 5rem;
-  align-items: flex-start;
+  grid-template-columns: 48% 52%;
+  gap: clamp(40px, 5vw, 84px);
+  align-items: stretch;
+  box-sizing: border-box;
 }
 
-/* Left Column */
-.contact-brand-titles {
+/* --------------------------------------------------------------------------
+   LEFT COLUMN: Black Rounded Contact Information Card
+   -------------------------------------------------------------------------- */
+.contact-black-card {
+  background-color: #000000;
+  border-radius: clamp(18px, 1.8vw, 22px);
+  border: none;
+  box-shadow: none;
+  padding: clamp(36px, 4vw, 56px);
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  box-sizing: border-box;
+  min-height: clamp(520px, 42vw, 570px);
+  justify-content: flex-start;
 }
 
-.cta-brand-word {
+/* Brand Heading: "Texan" = yellow, "Agency" = white on the same line */
+.card-brand-header {
+  margin-bottom: clamp(16px, 2vh, 24px);
+}
+
+.card-brand-title {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 4.8vw, 4.2rem);
+  font-size: clamp(44px, 4.8vw, 74px);
   font-weight: 300;
-  line-height: 0.96;
+  line-height: 1.0;
   letter-spacing: -0.035em;
-  color: var(--text-primary);
+  margin: 0;
+  white-space: nowrap;
 }
 
-.cta-subheading {
-  font-size: 1.15rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+.brand-yellow {
+  color: #39FF14;
 }
 
-.cta-contact-list {
-  list-style: none;
+.brand-white {
+  color: #ffffff;
+}
+
+/* Description below brand */
+.card-schedule-desc {
+  font-family: var(--font-family);
+  font-size: clamp(18px, 1.55vw, 24px);
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  margin: 0 0 clamp(20px, 2.5vh, 28px) 0;
+}
+
+/* 2px White Divider spanning almost the entire inner width */
+.card-white-divider {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  opacity: 0.9;
+  margin-bottom: clamp(28px, 3.5vh, 42px);
+}
+
+/* Contact Details Stack */
+.card-contacts-stack {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  margin-top: 2rem;
+  gap: clamp(24px, 3vh, 36px);
 }
 
-.cta-contact-item {
+.card-contact-row {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 1.05rem;
-  color: var(--text-primary);
+}
+
+.card-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(16px, 1.8vw, 24px);
   text-decoration: none;
-  transition: all var(--transition-fast);
+  color: #ffffff;
+  transition: opacity 0.2s ease;
 }
 
-.cta-contact-item:not(.no-link):hover {
-  color: var(--accent-yellow);
-  transform: translateX(4px);
+.card-contact-link:not(.no-pointer):hover {
+  opacity: 0.85;
 }
 
-.cta-icon-box {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: 1px solid var(--border-color);
-  background-color: #fafafa;
+.card-contact-link.no-pointer {
+  cursor: default;
+}
+
+/* Minimal Line-Style Icon (38-42px, white, no circular background) */
+.card-icon-wrap {
+  width: clamp(38px, 3.2vw, 44px);
+  height: clamp(38px, 3.2vw, 44px);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-primary);
+  color: #ffffff;
   flex-shrink: 0;
-  transition: all var(--transition-fast);
 }
 
-.cta-contact-item:not(.no-link):hover .cta-icon-box {
-  border-color: var(--accent-yellow);
-  background-color: var(--accent-yellow);
-  color: #000000;
-}
-
-/* Right Column Form */
-.texan-contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  background-color: #fbfbfb;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 2.75rem;
-  box-shadow: var(--shadow-subtle);
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.form-input {
+.card-contact-icon {
   width: 100%;
-  padding: 1rem 1.35rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
-  background-color: #ffffff;
-  color: var(--text-primary);
-  font-size: 0.95rem;
-  transition: all var(--transition-fast);
+  height: 100%;
+  color: #ffffff;
+}
+
+.card-contact-value {
+  font-family: var(--font-family);
+  font-size: clamp(18px, 1.5vw, 22px);
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   RIGHT COLUMN: Minimal Contact Form directly on white section background
+   -------------------------------------------------------------------------- */
+.contact-form-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.texan-minimal-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(22px, 3vh, 32px);
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.minimal-field-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+/* Field Style: Transparent background, no box/container, only black bottom underline */
+.minimal-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  border-radius: 0;
+  padding: clamp(14px, 1.6vh, 20px) 0;
+  font-family: var(--font-family);
+  font-size: clamp(20px, 1.8vw, 28px);
+  font-weight: 400;
+  color: #000000;
   outline: none;
+  box-sizing: border-box;
+  transition: border-bottom-color 0.25s ease;
 }
 
-.form-input:focus {
-  border-color: #000000;
-  box-shadow: 0 0 0 3px rgba(252, 206, 16, 0.25);
+.minimal-input::placeholder {
+  color: #666666;
+  font-family: var(--font-family);
+  font-size: clamp(20px, 1.8vw, 28px);
+  font-weight: 400;
 }
 
-.form-input.error {
-  border-color: #e53e3e;
-  background-color: #fff8f8;
+.minimal-input:focus {
+  border-bottom: 2px solid #000000;
 }
 
-.form-textarea {
+.minimal-input.has-error {
+  border-bottom-color: #e53e3e;
+}
+
+/* Message Field (Textarea) */
+.minimal-textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: clamp(80px, 9vh, 120px);
+  line-height: 1.45;
 }
 
-.form-error-msg {
-  font-size: 0.8rem;
+.minimal-error-msg {
+  font-family: var(--font-family);
+  font-size: 0.85rem;
   color: #e53e3e;
   font-weight: 500;
+  margin-top: 6px;
 }
 
-.form-action-row {
+/* Submit Action Row (Bottom-Right) */
+.minimal-action-row {
   display: flex;
   justify-content: flex-end;
-  margin-top: 0.5rem;
+  margin-top: clamp(16px, 2vh, 24px);
 }
 
-.form-submit-btn {
-  padding: 0.85rem 2.25rem;
-  font-size: 1rem;
+.minimal-submit-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #39FF14;
+  color: #000000;
+  border: none;
+  box-shadow: 0 4px 20px rgba(57, 255, 20, 0.35);
+  border-radius: 9999px;
+  width: clamp(180px, 16vw, 210px);
+  height: clamp(62px, 6vh, 76px);
+  font-family: var(--font-family);
+  font-size: clamp(20px, 1.55vw, 24px);
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.minimal-submit-pill:hover {
+  background-color: #21DC00;
+  transform: translateY(-2px);
+}
+
+.submit-arrow-icon {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.minimal-submit-pill:hover .submit-arrow-icon {
+  transform: translateX(5px);
 }
 
 /* Success Banner */
 .form-success-banner {
-  background-color: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 3.5rem 2.5rem;
+  background-color: #fcfcfc;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: clamp(40px, 5vh, 60px) clamp(24px, 3vw, 40px);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: var(--shadow-card);
+  justify-content: center;
+  min-height: 380px;
 }
 
 .success-icon {
@@ -156,28 +272,75 @@
 }
 
 .success-title {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  font-weight: 500;
+  color: #000000;
+  margin: 0 0 0.75rem 0;
 }
 
 .success-text {
+  font-family: var(--font-family);
   font-size: 1rem;
   line-height: 1.65;
   color: var(--text-muted);
-  max-width: 480px;
-  margin-bottom: 2rem;
+  max-width: 440px;
+  margin: 0 0 2rem 0;
 }
 
-/* Responsive */
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
 @media (max-width: 990px) {
   .contact-cta-container {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    gap: 48px;
   }
 
-  .texan-contact-form {
-    padding: 2rem 1.5rem;
+  .contact-black-card {
+    min-height: auto;
+    padding: 36px 28px;
+  }
+
+  .card-brand-title {
+    white-space: normal;
+  }
+
+  .minimal-action-row {
+    justify-content: stretch;
+  }
+
+  .minimal-submit-pill {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-cta-section {
+    padding-top: 60px;
+    padding-bottom: 70px;
+  }
+
+  .card-brand-title {
+    font-size: 38px;
+  }
+
+  .card-schedule-desc {
+    font-size: 18px;
+  }
+
+  .card-contact-value {
+    font-size: 17px;
+  }
+
+  .minimal-input,
+  .minimal-input::placeholder {
+    font-size: 20px;
+  }
+
+  .minimal-submit-pill {
+    height: 60px;
+    font-size: 20px;
   }
 }

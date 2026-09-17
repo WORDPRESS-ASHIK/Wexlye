@@ -1,92 +1,171 @@
+/* ==========================================================================
+   Client Logos / "We’re Working On" Section
+   Matches the original Texan Agency editorial reference layout
+   ========================================================================== */
+
 .client-logos-section {
-  padding-top: clamp(60px, 8vw, 110px);
-  padding-bottom: clamp(60px, 8vw, 110px);
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  background-color: var(--bg-primary);
+  background-color: #ffffff;
+  padding-top: clamp(80px, 8.5vw, 130px);
+  padding-bottom: clamp(80px, 8.5vw, 130px);
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
 }
 
-.logos-header-row {
+.client-logos-container {
+  width: 100%;
+  max-width: var(--container-max-width, 1300px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 3.5vw, 48px);
+  padding-right: clamp(20px, 3.5vw, 48px);
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Header: Left Large Heading, Right "We’re Working On"
+   ========================================================================== */
+
+.client-logos-header {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 3.5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: clamp(48px, 5.5vw, 76px);
 }
 
-.logos-statement {
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
+.client-logos-heading {
+  font-family: var(--font-family);
+  /* Large, elegant display heading matching Poppins 300 hero system */
+  font-size: clamp(32px, 3.7vw, 56px);
+  font-weight: 300 !important;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  max-width: 1050px;
+}
+
+.client-logos-eyebrow {
+  font-family: var(--font-family);
+  font-size: clamp(15px, 1.15vw, 17px);
   font-weight: 400;
-  color: var(--text-primary);
-  max-width: 620px;
-  line-height: 1.4;
+  color: #000000;
+  line-height: 1.35;
+  text-align: right;
+  letter-spacing: -0.01em;
+  margin-top: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.logos-header-row .section-eyebrow {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  text-transform: capitalize;
-  margin-bottom: 0;
-}
+/* ==========================================================================
+   4-Column x 2-Row Black Logo Cards Grid
+   ========================================================================== */
 
-/* 4-column Grid */
 .logos-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  position: relative;
+  gap: clamp(16px, 1.6vw, 24px);
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.logo-item {
-  height: 110px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
-  background-color: #fafafa;
+.logo-card {
+  background-color: #000000;
+  border-radius: 18px;
+  height: clamp(120px, 9.5vw, 142px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
-  transition: all var(--transition-base);
+  padding: clamp(16px, 2vw, 28px);
+  border: none;
+  cursor: pointer;
   user-select: none;
-  position: relative;
-  will-change: transform;
+  box-sizing: border-box;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
 }
 
-.logo-item:hover {
-  border-color: var(--accent-yellow);
-  background-color: #ffffff;
-  box-shadow: var(--shadow-card);
-  transform: translateY(-3px);
+/* Subtle, premium hover effect */
+.logo-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
 }
 
-.logo-brand-name {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #222222;
-  text-transform: uppercase;
-  opacity: 0.85;
-  transition: opacity var(--transition-fast), color var(--transition-fast);
+.client-logo-svg {
+  height: clamp(28px, 2.4vw, 36px);
+  max-width: 78%;
+  width: auto;
+  display: block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.logo-item:hover .logo-brand-name {
-  opacity: 1;
-  color: #000000;
+.logo-card:hover .client-logo-svg {
+  transform: scale(1.04);
 }
 
-/* Responsive Grid */
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
 @media (max-width: 1024px) {
   .logos-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }
 
-@media (max-width: 540px) {
-  .logos-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .client-logos-section {
+    padding-top: clamp(60px, 8vw, 80px);
+    padding-bottom: clamp(60px, 8vw, 80px);
   }
 
-  .logo-item {
-    height: 90px;
+  .client-logos-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .client-logos-eyebrow {
+    order: -1;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  .desktop-br {
+    display: none;
+  }
+
+  .logo-card {
+    height: 110px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .logo-card {
+    height: 96px;
+    border-radius: 12px;
+    padding: 12px;
+  }
+
+  .client-logo-svg {
+    height: 24px;
+    max-width: 85%;
+  }
+}
+
+@media (max-width: 360px) {
+  .logos-grid {
+    grid-template-columns: 1fr;
   }
 }

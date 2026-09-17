@@ -2,6 +2,7 @@ import React from 'react';
 import { ClientLogos } from '../components/ClientLogos';
 import { FAQSection } from '../components/FAQSection';
 import { ContactCTA } from '../components/ContactCTA';
+import { AboutGallerySlider } from '../components/AboutGallerySlider';
 import './AboutPage.css';
 
 export const AboutPage: React.FC = () => {
@@ -10,6 +11,26 @@ export const AboutPage: React.FC = () => {
     { title: 'Uncompromising Precision', desc: 'From kerning to animation easing, craftsmanship is non-negotiable in our studio.' },
     { title: 'Radical Transparency', desc: 'Direct, candid communication with no layers of middlemen or inflated timelines.' },
     { title: 'Future-Proof Architecture', desc: 'We engineer modular digital systems designed to evolve and scale effortlessly.' }
+  ];
+
+  // Clean slider image collection - easily extensible for future uploads
+  const aboutSliderImages = [
+    {
+      url: '/assets/about-slider/image1.jpg',
+      alt: 'Brand Strategy & Design',
+    },
+    {
+      url: '/assets/about-slider/image2.jpg',
+      alt: 'Marketing & Digital Systems',
+    },
+    {
+      url: '/assets/about-slider/image3.jpg',
+      alt: 'Web Design & Development',
+    },
+    {
+      url: '/assets/about-slider/image4.jpg',
+      alt: 'SEO & Technical Strategy',
+    },
   ];
 
   return (
@@ -31,30 +52,8 @@ export const AboutPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Visual Showcase Gallery */}
-          <div className="about-gallery-strip">
-            <div className="about-gallery-item">
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
-                alt="Texan Studio Collaboration"
-                className="gallery-img"
-              />
-            </div>
-            <div className="about-gallery-item">
-              <img
-                src="https://images.unsplash.com/photo-1542744094-3a31727221eb?q=80&w=800&auto=format&fit=crop"
-                alt="Brand Strategy Workshop"
-                className="gallery-img"
-              />
-            </div>
-            <div className="about-gallery-item">
-              <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop"
-                alt="Code and Engineering Lab"
-                className="gallery-img"
-              />
-            </div>
-          </div>
+          {/* Visual Showcase Auto-Sliding Carousel - 4 Desktop Items */}
+          <AboutGallerySlider images={aboutSliderImages} autoPlayInterval={3000} transitionDuration={800} />
         </div>
       </section>
 
@@ -70,7 +69,11 @@ export const AboutPage: React.FC = () => {
 
           <div className="values-grid">
             {values.map((v, i) => (
-              <div key={i} className="value-card" data-cursor="pointer">
+              <div
+                key={i}
+                className={`value-card ${i === 0 || i === 3 ? 'value-card-neon' : 'value-card-dark'}`}
+                data-cursor="pointer"
+              >
                 <span className="value-number">0{i + 1}</span>
                 <h3 className="value-title">{v.title}</h3>
                 <p className="value-desc">{v.desc}</p>

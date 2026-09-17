@@ -5,7 +5,7 @@ import { PROJECTS_DATA } from '../data/projects';
 import { ClientLogos } from '../components/ClientLogos';
 import { FAQSection } from '../components/FAQSection';
 import { ContactCTA } from '../components/ContactCTA';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
 import './ServicesPage.css';
 
 interface ServiceDetailPageProps {
@@ -17,13 +17,17 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service })
 
   // Related projects
   const relatedProjects = PROJECTS_DATA.filter((p) =>
-    p.categories.some((c) => c.toLowerCase().includes(service.title.toLowerCase()) || service.title.toLowerCase().includes(c.toLowerCase()))
+    p.categories.some(
+      (c) =>
+        c.toLowerCase().includes(service.title.toLowerCase()) ||
+        service.title.toLowerCase().includes(c.toLowerCase())
+    )
   );
   const displayProjects = relatedProjects.length > 0 ? relatedProjects : PROJECTS_DATA.slice(0, 2);
 
   return (
     <div className="service-detail-view">
-      {/* Service Detail Hero */}
+      {/* 1. Large service number, 2. Large service title, 3. Short premium introduction */}
       <section className="service-detail-hero section-padding-top">
         <div className="container">
           <div className="detail-hero-grid">
@@ -43,7 +47,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service })
                   }}
                   data-cursor="pointer"
                 >
-                  <span>Get a Quote</span>
+                  <span>Discuss This Service</span>
                   <ArrowRight size={16} />
                 </a>
               </div>
@@ -61,22 +65,24 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service })
       {/* Partner Logos Strip */}
       <ClientLogos />
 
-      {/* Comprehensive Overview & Capabilities */}
+      {/* 4. Detailed service description & 5. What We Do / Services Included */}
       <section className="service-overview-section section-padding">
         <div className="container">
           <div className="overview-grid">
             <div className="overview-narrative">
-              <span className="section-eyebrow">capabilities & approach</span>
+              <span className="section-eyebrow">capabilities & overview</span>
               <h2 className="overview-title">
                 Crafting meaningful digital experiences that fuel long-term business recognition.
               </h2>
               {service.fullDesc.map((para, i) => (
-                <p key={i} className="overview-para">{para}</p>
+                <p key={i} className="overview-para">
+                  {para}
+                </p>
               ))}
             </div>
 
             <div className="overview-capabilities-card">
-              <h3 className="card-header-title">What We Deliver</h3>
+              <h3 className="card-header-title">What We Do</h3>
               <ul className="capabilities-list">
                 {service.capabilities.map((cap) => (
                   <li key={cap} className="capability-item">
@@ -90,11 +96,11 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service })
         </div>
       </section>
 
-      {/* 4-Step Process Section with Bullet Deliverables */}
+      {/* 6. Our Approach / Process (4-Step Process Section) */}
       <section className="service-process-section section-padding dark-section">
         <div className="container">
           <div className="service-process-header">
-            <span className="section-eyebrow highlight-gold">our methodology</span>
+            <span className="section-eyebrow highlight-gold">our approach</span>
             <h2 className="display-title">How We Deliver {service.title}</h2>
             <hr className="texan-divider" />
           </div>
@@ -118,6 +124,26 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service })
         </div>
       </section>
 
+      {/* 7. Benefits / Why Choose Us */}
+      {service.benefits && service.benefits.length > 0 && (
+        <section className="service-benefits-section section-padding">
+          <div className="container">
+            <div className="service-benefits-header">
+              <span className="section-eyebrow">why choose us</span>
+              <h2 className="overview-title">Benefits of Partnering with WEXLYE</h2>
+            </div>
+            <div className="service-benefits-grid">
+              {service.benefits.map((benefit, index) => (
+                <div key={index} className="service-benefit-card">
+                  <ShieldCheck size={26} className="benefit-icon" />
+                  <p className="benefit-text">{benefit}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Related Case Studies */}
       <section className="service-case-studies-section section-padding">
         <div className="container">
@@ -140,10 +166,14 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service })
                 <div className="related-info">
                   <div className="related-tags">
                     {project.categories.map((c) => (
-                      <span key={c} className="case-tag">{c}</span>
+                      <span key={c} className="case-tag">
+                        {c}
+                      </span>
                     ))}
                   </div>
-                  <h3 className="related-title">{project.title} - {project.subtitle}</h3>
+                  <h3 className="related-title">
+                    {project.title} - {project.subtitle}
+                  </h3>
                 </div>
               </div>
             ))}
@@ -162,7 +192,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service })
         eyebrow="questions & answers"
       />
 
-      {/* CTA */}
+      {/* 8. CTA section & 9. Contact/Discuss CTA */}
       <ContactCTA />
     </div>
   );

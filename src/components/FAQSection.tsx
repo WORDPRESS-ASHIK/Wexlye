@@ -12,10 +12,11 @@ interface FAQSectionProps {
 
 export const FAQSection: React.FC<FAQSectionProps> = ({
   customItems,
-  title = 'Frequently Asked Questions',
-  eyebrow = 'frequently asked'
+  title = 'Frequently Asked',
+  eyebrow
 }) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  // Support single-open accordion behavior
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const items = customItems || MAIN_FAQS;
 
   const toggleItem = (index: number) => {
@@ -23,45 +24,53 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
   };
 
   return (
-    <section className="faq-section section-padding">
-      <div className="container faq-container">
-        {/* Eyebrow & Title */}
-        <div className="faq-header">
-          <span className="section-eyebrow">{eyebrow}</span>
-          <h2 className="faq-main-title">{title}</h2>
+    <section className="faq-section" id="faq">
+      <div className="container">
+        {/* Left-Aligned Clean Heading: "Frequently Asked" */}
+        <div className="faq-header-block">
+          {eyebrow && <span className="faq-eyebrow">{eyebrow}</span>}
+          <h2 className="faq-clean-heading">{title}</h2>
         </div>
 
-        {/* Accordion List */}
-        <div className="faq-accordion-list" role="region" aria-label="Frequently Asked Questions Accordion">
+        {/* Minimal Horizontal Line Accordion List */}
+        <div
+          className="faq-horizontal-list"
+          role="region"
+          aria-label="Frequently Asked Questions Accordion"
+        >
           {items.map((item, index) => {
             const isOpen = openIndex === index;
 
             return (
-              <div 
-                key={item.id} 
-                className={`faq-accordion-card ${isOpen ? 'active' : ''}`}
+              <div
+                key={item.id}
+                className={`faq-row-item ${isOpen ? 'is-open' : ''}`}
                 data-cursor="pointer"
               >
                 <button
-                  className="faq-question-btn"
+                  type="button"
+                  className="faq-row-trigger"
                   onClick={() => toggleItem(index)}
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${item.id}`}
                 >
-                  <span className="faq-question-text">{item.question}</span>
-                  <div className={`faq-icon-wrap ${isOpen ? 'rotated' : ''}`}>
-                    <ChevronDown size={20} className="faq-chevron" />
+                  <span className="faq-row-question">{item.question}</span>
+                  <div className={`faq-chevron-icon ${isOpen ? 'rotated' : ''}`}>
+                    <ChevronDown size={22} strokeWidth={1.75} />
                   </div>
                 </button>
 
                 <div
                   id={`faq-answer-${item.id}`}
-                  className={`faq-answer-collapse ${isOpen ? 'expanded' : ''}`}
+                  className={`faq-row-content ${isOpen ? 'expanded' : ''}`}
                 >
-                  <div className="faq-answer-inner">
-                    <p>{item.answer}</p>
+                  <div className="faq-row-content-inner">
+                    <p className="faq-row-answer">{item.answer}</p>
                   </div>
                 </div>
+
+                {/* Thin horizontal divider underneath spanning the full content width */}
+                <div className="faq-row-divider" />
               </div>
             );
           })}

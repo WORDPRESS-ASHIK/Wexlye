@@ -1,145 +1,245 @@
+/* ==========================================================================
+   Footer Section — Deep Black #0D0D0D & Minimal Editorial Layout
+   ========================================================================== */
+
 .site-footer {
-  background-color: #0c0c0c;
+  background-color: #0d0d0d;
   color: #ffffff;
-  padding-top: clamp(70px, 10vw, 130px);
-  padding-bottom: clamp(40px, 6vw, 70px);
+  padding-top: clamp(80px, 9vw, 130px);
+  padding-bottom: clamp(60px, 7vw, 90px);
+  position: relative;
+  overflow: hidden;
 }
 
 .footer-container {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
-/* Giant Email Action Link */
-.footer-email-row {
-  margin-bottom: 2.75rem;
+/* --------------------------------------------------------------------------
+   Top Email Headline: Very Large Standalone Headline (No Border, No Pill)
+   -------------------------------------------------------------------------- */
+.footer-top-email-wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: clamp(36px, 5vh, 64px);
+  width: 100%;
 }
 
-.footer-email-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 1.25rem;
-  padding: 1.2rem 2.5rem;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+.footer-email-headline {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: clamp(56px, 8vw, 130px);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1.0;
   color: #ffffff;
   text-decoration: none;
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.8vw, 2.2rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  transition: all var(--transition-base);
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  transition: opacity 0.25s ease, color 0.25s ease;
+  user-select: none;
 }
 
-.footer-email-btn:hover {
-  background-color: var(--accent-yellow);
-  border-color: var(--accent-yellow);
-  color: #000000;
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(252, 206, 16, 0.3);
+.footer-email-headline:hover {
+  opacity: 0.85;
+  color: #f5f5f5;
 }
 
-.footer-email-btn:hover .email-arrow {
-  transform: translate(3px, -3px);
-}
-
-.email-arrow {
-  transition: transform var(--transition-fast);
-}
-
-/* Social Row */
-.footer-social-row {
+/* --------------------------------------------------------------------------
+   Social Items: 5 Visual Non-Interactive Pill Buttons
+   -------------------------------------------------------------------------- */
+.footer-social-pill-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.85rem;
-  margin-bottom: 5rem;
+  gap: clamp(10px, 1.2vw, 16px);
+  margin-bottom: clamp(48px, 6vh, 76px);
 }
 
-/* Columns Grid */
-.footer-columns-grid {
+.footer-social-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  flex: 1 1 0px;
+  min-width: clamp(130px, 10vw, 165px);
+  height: clamp(48px, 4.8vh, 54px);
+  padding: 0 1.4rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  color: #ffffff;
+  font-family: var(--font-family);
+  font-size: clamp(14px, 1vw, 16px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.footer-social-pill:hover {
+  border-color: var(--accent-yellow);
+  color: var(--accent-yellow);
+  background: rgba(57, 255, 20, 0.08);
+  transform: translateY(-2px);
+}
+
+.social-pill-arrow {
+  color: #ffffff;
+  transition: color 0.25s ease;
+}
+
+.footer-social-pill:hover .social-pill-arrow {
+  color: var(--accent-yellow);
+}
+
+/* --------------------------------------------------------------------------
+   Thin Horizontal Divider
+   -------------------------------------------------------------------------- */
+.footer-thin-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.12);
+  margin-bottom: clamp(48px, 6vh, 76px);
+}
+
+/* --------------------------------------------------------------------------
+   Bottom 3-Column Layout
+   -------------------------------------------------------------------------- */
+.footer-bottom-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 4rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 4rem;
+  gap: clamp(36px, 5vw, 70px);
+  align-items: flex-start;
 }
 
-/* Brand Col */
+/* Column 1: Brand */
 .footer-brand-col {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
   max-width: 440px;
 }
 
-.footer-logo {
+.footer-brand-logo {
   display: inline-flex;
   align-items: baseline;
+  margin-bottom: clamp(14px, 2vh, 22px);
   cursor: pointer;
 }
 
-.footer-logo .logo-text {
+.footer-brand-logo .logo-word {
   font-family: var(--font-display);
-  font-size: 1.85rem;
+  font-size: clamp(24px, 2.4vw, 32px);
   font-weight: 800;
   letter-spacing: -0.04em;
   color: #ffffff;
 }
 
-.footer-statement {
-  font-size: 1.05rem;
-  color: #999999;
-  line-height: 1.6;
+.footer-brand-logo .logo-dot {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 800;
+  color: var(--accent-yellow);
 }
 
-.footer-copyright {
-  font-size: 0.85rem;
+.footer-brand-desc {
+  font-family: var(--font-family);
+  font-size: clamp(16px, 1.2vw, 19px);
+  color: #9c9c9c;
+  line-height: 1.55;
+  margin: 0 0 clamp(28px, 4vh, 48px) 0;
+  max-width: 400px;
+  font-weight: 300;
+}
+
+.footer-copyright-text {
+  font-family: var(--font-family);
+  font-size: clamp(13px, 0.95vw, 14.5px);
   color: #666666;
-  margin-top: auto;
+  margin: 0;
+  line-height: 1.5;
 }
 
-/* Links Columns */
-.footer-links-col {
+/* Columns 2 & 3: Services & Quick Links */
+.footer-nav-col {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 }
 
-.footer-col-title {
+.footer-col-heading {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: clamp(17px, 1.3vw, 20px);
   font-weight: 600;
   color: #ffffff;
-  letter-spacing: 0.02em;
+  margin: 0 0 clamp(18px, 2.5vh, 26px) 0;
+  letter-spacing: -0.01em;
 }
 
-.footer-nav-list {
+.footer-links-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: clamp(10px, 1.4vh, 14px);
 }
 
-.footer-nav-list a {
-  color: #aaaaaa;
-  font-size: 0.95rem;
-  transition: all var(--transition-fast);
+.footer-nav-anchor {
+  font-family: var(--font-family);
+  font-size: clamp(15px, 1.1vw, 17.5px);
+  color: #a8a8a8;
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 0.2s ease, transform 0.2s ease;
   display: inline-block;
 }
 
-.footer-nav-list a:hover {
-  color: var(--accent-yellow);
-  transform: translateX(4px);
+.footer-nav-anchor:hover {
+  color: #ffffff;
+  transform: translateX(3px);
 }
 
-/* Responsive */
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
 @media (max-width: 900px) {
-  .footer-columns-grid {
+  .footer-bottom-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 40px;
   }
 
-  .footer-social-row {
-    margin-bottom: 3.5rem;
+  .footer-brand-col {
+    max-width: none;
+  }
+
+  .footer-brand-desc {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .footer-email-headline {
+    font-size: clamp(34px, 7.5vw, 54px);
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .footer-social-pill {
+    min-width: 135px;
+    height: 46px;
+    font-size: 14px;
   }
 }

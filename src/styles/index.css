@@ -13,6 +13,7 @@ html {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   scroll-behavior: smooth;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -21,7 +22,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
   line-height: var(--line-height-body);
   background-color: var(--bg-primary);
   color: var(--text-primary);
@@ -180,7 +181,7 @@ button, input, textarea, select {
   background-color: var(--accent-yellow);
   border-color: var(--accent-yellow);
   color: #000000;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .btn-pill-gold:hover {
@@ -188,7 +189,7 @@ button, input, textarea, select {
   border-color: var(--accent-yellow-hover);
   color: #000000;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(252, 206, 16, 0.35);
+  box-shadow: 0 8px 24px rgba(57, 255, 20, 0.35);
 }
 
 .btn-pill-dark {
@@ -213,6 +214,7 @@ button, input, textarea, select {
 .btn-pill-white:hover {
   background-color: var(--accent-yellow);
   border-color: var(--accent-yellow);
+  color: #000000;
   transform: translateY(-2px);
 }
 
@@ -235,7 +237,7 @@ button, input, textarea, select {
   border-color: var(--accent-yellow);
   color: var(--accent-yellow);
   transform: translateY(-3px);
-  background: rgba(252, 206, 16, 0.1);
+  background: rgba(57, 255, 20, 0.1);
 }
 
 /* Custom Cursor cursor-none trigger for fine pointers */

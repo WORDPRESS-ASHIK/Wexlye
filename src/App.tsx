@@ -13,16 +13,12 @@ import { ServiceDetailPage } from './pages/ServiceDetailPage';
 import { WorkPage } from './pages/WorkPage';
 import { CaseStudyDetailPage } from './pages/CaseStudyDetailPage';
 import { PricingPage } from './pages/PricingPage';
-import { CareerPage } from './pages/CareerPage';
-import { BlogPage } from './pages/BlogPage';
-import { BlogDetailPage } from './pages/BlogDetailPage';
 import { ContactPage } from './pages/ContactPage';
 import { LegalPage } from './pages/LegalPage';
 
 // Data for route param lookups
 import { SERVICES_DATA } from './data/services';
 import { PROJECTS_DATA } from './data/projects';
-import { BLOG_POSTS } from './data/blog';
 import { ArrowLeft, Home } from 'lucide-react';
 
 const NotFoundView: React.FC = () => {
@@ -101,8 +97,6 @@ const AppContent: React.FC = () => {
     if (path === '/services') return <ServicesPage />;
     if (path === '/work' || path === '/projects') return <WorkPage />;
     if (path === '/pricing') return <PricingPage />;
-    if (path === '/career' || path === '/careers') return <CareerPage />;
-    if (path === '/blog') return <BlogPage />;
     if (path === '/contact') return <ContactPage />;
     if (path === '/privacy-policy') return <LegalPage type="privacy" />;
     if (path === '/terms-condition' || path === '/terms') return <LegalPage type="terms" />;
@@ -126,13 +120,6 @@ const AppContent: React.FC = () => {
       const slug = path.replace(/^\/(work|project)\//, '').split('/')[0];
       const matchedProject = PROJECTS_DATA.find((p) => p.slug === slug);
       if (matchedProject) return <CaseStudyDetailPage project={matchedProject} />;
-    }
-
-    // Blog post route: /blog/:slug
-    if (path.startsWith('/blog/')) {
-      const slug = path.replace('/blog/', '').split('/')[0];
-      const matchedPost = BLOG_POSTS.find((p) => p.slug === slug);
-      if (matchedPost) return <BlogDetailPage post={matchedPost} />;
     }
 
     return <NotFoundView />;

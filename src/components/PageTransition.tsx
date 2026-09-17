@@ -12,7 +12,7 @@ export const PageTransition: React.FC = () => {
     >
       <div className="transition-curtain">
         <div className="transition-logo">
-          <span className="logo-texan">TEXAN</span>
+          <span className="logo-texan">WEXLYE</span>
           <span className="logo-dot">.</span>
         </div>
       </div>

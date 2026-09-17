@@ -39,7 +39,7 @@ export const ServicesPage: React.FC = () => {
                   className="service-stack-card"
                   style={{ top: `${stickyOffset}px` }}
                   data-cursor="pointer"
-                  onClick={() => navigate(`/${service.slug}`)}
+                  onClick={() => navigate(`/services/${service.slug}`)}
                 >
                   <div className="stack-card-inner">
                     <div className="stack-card-left">
@@ -57,12 +57,12 @@ export const ServicesPage: React.FC = () => {
                       </div>
 
                       <a
-                        href={`/${service.slug}`}
+                        href={`/services/${service.slug}`}
                         className="btn-pill btn-pill-dark stack-detail-btn"
                         onClick={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
-                          navigate(`/${service.slug}`);
+                          navigate(`/services/${service.slug}`);
                         }}
                       >
                         <span>More detail</span>

@@ -1,70 +1,118 @@
+/* ==========================================================================
+   Case Study Section - Scroll-Driven Stacked Card Presentation
+   Matches the exact visual hierarchy, two-column card, and scroll pinning
+   ========================================================================== */
+
 .case-studies-section {
-  background-color: var(--bg-primary);
   position: relative;
+  background-color: #ffffff;
+  /* Track length: 260vh provides a natural, physical scroll feel for 3 stacked cards */
+  height: 260vh;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.case-studies-header {
-  margin-bottom: 3.5rem;
-}
-
-.case-title-line {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 6rem);
-  font-weight: 300;
-  line-height: 0.95;
-  letter-spacing: -0.035em;
-  color: var(--text-primary);
-  text-transform: capitalize;
-}
-
-/* Sticky Stacking Deck Container */
-.case-stack-container {
+/* Sticky viewport that pins smoothly in view while cards transition */
+.case-studies-sticky-viewport {
+  position: sticky;
+  top: 72px; /* Clears fixed navbar */
+  height: calc(100vh - 72px);
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
-  position: relative;
-  padding-bottom: 2rem;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
+.case-studies-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 840px;
+  justify-content: space-between;
+  padding-block: clamp(60px, 6vh, 90px);
+  box-sizing: border-box;
+}
+
+/* Section Heading: "Case Study" on one horizontal line */
+.case-studies-header {
+  margin-bottom: clamp(16px, 2.2vh, 32px);
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.case-title-single {
+  font-family: var(--font-family);
+  font-size: clamp(2.4rem, 4.8vw, 4.8rem);
+  font-weight: 300 !important;
+  line-height: 1.0;
+  letter-spacing: -0.04em;
+  color: #000000;
+  text-transform: capitalize;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* Stage where cards are stacked and pinned */
+.case-deck-stage {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 380px;
+  max-height: 520px;
+  box-sizing: border-box;
+}
+
+/* Horizontal 2-Column Card */
 .case-study-card {
-  position: sticky;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: grid;
-  grid-template-columns: 1.2fr 0.9fr;
-  gap: 3rem;
+  grid-template-columns: 1.18fr 0.82fr;
+  gap: clamp(24px, 3.5vw, 54px);
   background-color: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 2.25rem;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 28px;
+  padding: clamp(20px, 2.6vw, 36px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
   cursor: pointer;
-  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
   overflow: hidden;
+  will-change: transform, opacity;
+  transform-origin: center top;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .case-study-card:hover {
-  border-color: var(--accent-yellow);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.16);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.12);
 }
 
-/* Card Media */
+/* Left Column: Dominant Large Image */
 .case-card-media {
   position: relative;
   width: 100%;
-  height: clamp(280px, 42vw, 440px);
-  border-radius: var(--radius-md);
+  height: 100%;
+  border-radius: 20px;
   overflow: hidden;
-  background-color: #f0f0f0;
+  background-color: #f2f2f2;
 }
 
 .case-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .case-study-card:hover .case-img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .case-img-overlay {
@@ -73,86 +121,175 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.02);
   pointer-events: none;
+  transition: background 0.3s ease;
 }
 
-/* Card Content Details */
-.case-card-content {
+.case-study-card:hover .case-img-overlay {
+  background: transparent;
+}
+
+/* Right Column: Project Information */
+.case-card-info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.5rem 0.5rem;
+  padding: clamp(8px, 1.2vw, 16px) 0;
+  box-sizing: border-box;
 }
 
-.case-tags-row {
+/* Small category labels at the top */
+.case-card-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-bottom: 2rem;
+  align-items: center;
 }
 
-.case-tag {
-  font-size: 0.85rem;
+.case-pill-tag {
+  font-family: var(--font-family);
+  font-size: clamp(12.5px, 0.9vw, 14.5px);
   font-weight: 500;
-  text-transform: lowercase;
-  letter-spacing: 0.04em;
   color: var(--text-muted);
-  border: 1px solid var(--border-color);
-  padding: 0.35rem 1rem;
-  border-radius: var(--radius-full);
-}
-
-.case-title-group {
-  margin-bottom: 2rem;
-}
-
-.case-project-name {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 400;
-  color: var(--text-primary);
-  letter-spacing: -0.03em;
-  line-height: 1.1;
   text-transform: lowercase;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  padding: 0.35rem 1.1rem;
+  border-radius: 9999px;
+  background-color: #ffffff;
 }
 
-.case-project-sub {
-  font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+/* Project title & subtitle */
+.case-title-block {
+  margin: clamp(0.75rem, 1.6vh, 1.6rem) 0;
+}
+
+.case-card-title {
+  font-family: var(--font-family);
+  font-size: clamp(48px, 4.8vw, 76px);
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  text-transform: lowercase;
+  margin: 0;
+}
+
+.case-card-subtitle {
+  font-family: var(--font-family);
+  font-size: clamp(34px, 3.6vw, 58px);
   font-weight: 300;
   color: var(--text-muted);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-top: 0.25rem;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: clamp(4px, 0.6vh, 10px) 0 0;
 }
 
-.case-cta-wrap {
+/* Yellow 'More Detail →' button */
+.case-btn-wrap {
   margin-top: auto;
 }
 
-.case-detail-btn {
-  font-size: 0.95rem;
+.case-gold-btn {
+  background-color: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+  color: #000000 !important;
+  font-weight: 700;
+  font-size: clamp(14px, 1vw, 15.5px);
   padding: 0.75rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 6px 20px rgba(57, 255, 20, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Responsive adjustments */
-@media (max-width: 900px) {
+.case-gold-btn:hover {
+  background-color: var(--accent-yellow-hover);
+  border-color: var(--accent-yellow-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(57, 255, 20, 0.4);
+}
+
+.case-arrow-icon {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.case-gold-btn:hover .case-arrow-icon {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 990px) {
+  .case-study-card {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .case-studies-section {
+    height: 240vh;
+  }
+
+  .case-studies-sticky-viewport {
+    top: 72px;
+    height: calc(100vh - 72px);
+  }
+
+  .case-studies-container {
+    justify-content: flex-start;
+    gap: 16px;
+    padding-block: clamp(40px, 5vh, 60px);
+  }
+
+  .case-title-single {
+    font-size: clamp(2rem, 7vw, 3rem);
+    white-space: nowrap;
+  }
+
+  .case-deck-stage {
+    min-height: 460px;
+    max-height: none;
+    flex: 1;
+  }
+
   .case-study-card {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1.5rem;
+    grid-template-rows: 200px 1fr;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 20px;
   }
 
-  .case-card-content {
-    padding: 0.5rem 0;
+  .case-card-media {
+    border-radius: 14px;
   }
 
-  .case-project-name {
-    font-size: 1.8rem;
+  .case-card-title {
+    font-size: clamp(32px, 7.5vw, 36px);
+    font-weight: 500;
+    line-height: 1.0;
   }
 
-  .case-project-sub {
-    font-size: 1.3rem;
+  .case-card-subtitle {
+    font-size: clamp(24px, 5.8vw, 28px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-top: 4px;
+  }
+
+  .case-title-block {
+    margin: 0.6rem 0;
+  }
+
+  .case-gold-btn {
+    padding: 0.65rem 1.4rem;
+    font-size: 13.5px;
   }
 }

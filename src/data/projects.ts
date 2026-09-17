@@ -54,7 +54,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
       { label: 'Time on Page', value: '4m 12s' },
       { label: 'Lighthouse Performance', value: '99/100' }
     ],
-    testimonialQuote: 'Texan Agency transformed our digital identity into a world-class experience. The feedback from our clients and investors has been extraordinary.',
+    testimonialQuote: 'WEXLYE transformed our digital identity into a world-class experience. The feedback from our clients and investors has been extraordinary.',
     testimonialAuthor: 'Shirley J Burch — CEO, Abstra'
   },
   {
@@ -86,7 +86,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
       { label: 'Daily Active Users', value: '+85%' },
       { label: 'User Satisfaction Score', value: '4.9/5' }
     ],
-    testimonialQuote: 'Working with Texan was phenomenal. Their UX instincts and coding precision elevated our entire SaaS platform.',
+    testimonialQuote: 'Working with WEXLYE was phenomenal. Their UX instincts and coding precision elevated our entire SaaS platform.',
     testimonialAuthor: 'Matthew Smith — Head of Product, Pauma'
   },
   {
@@ -118,7 +118,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
       { label: 'Inbound Inquiries', value: '+210%' },
       { label: 'Media Recognition', value: '4 Awards' }
     ],
-    testimonialQuote: 'The branding services from Texan Agency exceeded our highest expectations. They captured our spirit and amplified our reach globally.',
+    testimonialQuote: 'The branding services from WEXLYE exceeded our highest expectations. They captured our spirit and amplified our reach globally.',
     testimonialAuthor: 'Liliana Harris — VP Marketing, BigFlow'
   },
   {
@@ -150,7 +150,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
       { label: 'Active Retention', value: '82%' },
       { label: 'Transactions Processed', value: '$45M+' }
     ],
-    testimonialQuote: 'Texan built a mobile experience that feels leagues ahead of legacy banking software. Our users love every single interaction.',
+    testimonialQuote: 'WEXLYE built a mobile experience that feels leagues ahead of legacy banking software. Our users love every single interaction.',
     testimonialAuthor: 'Ossie J. Jeter — Lead Product Designer'
   }
 ];

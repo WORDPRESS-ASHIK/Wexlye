@@ -35,7 +35,7 @@ export const Header: React.FC = () => {
               navigate('/');
             }}
           >
-            <span className="logo-text">TEXAN</span>
+            <span className="logo-text">WEXLYE</span>
             <span className="logo-dot">.</span>
           </a>
 

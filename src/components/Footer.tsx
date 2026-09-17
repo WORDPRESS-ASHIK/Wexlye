@@ -1,8 +1,29 @@
 import React from 'react';
 import { useRouter } from '../context/RouterContext';
-import { AGENCY_INFO, SERVICE_NAV_ITEMS, QUICK_LINKS } from '../data/navigation';
+import { AGENCY_INFO } from '../data/navigation';
 import { ArrowUpRight } from 'lucide-react';
 import './Footer.css';
+
+interface FooterServiceLink {
+  label: string;
+  href: string;
+}
+
+const FOOTER_SERVICES: FooterServiceLink[] = [
+  { label: 'Work', href: '/work' },
+  { label: 'Branding', href: '/services/branding' },
+  { label: 'UI/UX Design', href: '/services/website-design' },
+  { label: 'Web Development', href: '/services/web-development' },
+  { label: 'App Development', href: '/services/digital-marketing' },
+  { label: 'Consultation', href: '/services/strategic-marketing' },
+];
+
+const FOOTER_QUICK_LINKS = [
+  { label: 'Home', href: '/' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms & Conditions', href: '/terms-condition' },
+];
 
 export const Footer: React.FC = () => {
   const { navigate } = useRouter();
@@ -14,96 +35,93 @@ export const Footer: React.FC = () => {
   return (
     <footer className="site-footer">
       <div className="container footer-container">
-        {/* Top: Giant Email Action Link */}
-        <div className="footer-email-row">
+        {/* TOP: Very Large Email Headline */}
+        <div className="footer-top-email-wrap">
           <a
             href={`mailto:${AGENCY_INFO.email}`}
-            className="footer-email-btn"
+            className="footer-email-headline"
             data-cursor="pointer"
           >
-            <span>{AGENCY_INFO.email}</span>
-            <ArrowUpRight size={24} className="email-arrow" />
+            {AGENCY_INFO.email}
           </a>
         </div>
 
-        {/* Social Media Pills Row */}
-        <div className="footer-social-row">
-          {AGENCY_INFO.socials.map((social) => (
+        {/* BELOW: 5 Clickable Social Pills */}
+        <div className="footer-social-pill-row">
+          {AGENCY_INFO.socials.map((item) => (
             <a
-              key={social.name}
-              href={social.href}
+              key={item.name}
+              href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="social-pill"
+              className="footer-social-pill"
               data-cursor="pointer"
             >
-              <span>{social.name}</span>
-              <ArrowUpRight size={14} />
+              <span>{item.name}</span>
+              <ArrowUpRight size={16} className="social-pill-arrow" />
             </a>
           ))}
         </div>
 
-        {/* Links & Brand Columns Grid */}
-        <div className="footer-columns-grid">
-          {/* Brand & Manifesto Column */}
+        {/* THIN HORIZONTAL DIVIDER */}
+        <div className="footer-thin-divider" />
+
+        {/* BOTTOM: 3-Column Footer Layout */}
+        <div className="footer-bottom-grid">
+          {/* COLUMN 1 — BRAND */}
           <div className="footer-brand-col">
-            <div className="footer-logo" onClick={() => handleNav('/')}>
-              <span className="logo-text">TEXAN</span>
+            <div className="footer-brand-logo" onClick={() => handleNav('/')} data-cursor="pointer">
+              <span className="logo-word">WEXLYE</span>
               <span className="logo-dot">.</span>
             </div>
-            <p className="footer-statement">
+
+            <p className="footer-brand-desc">
               Empowering businesses with innovative digital solutions.
             </p>
-            <p className="footer-copyright">
+
+            <p className="footer-copyright-text">
               {AGENCY_INFO.copyright}
             </p>
           </div>
 
-          {/* Services Links Column */}
-          <div className="footer-links-col">
-            <h4 className="footer-col-title">Services</h4>
-            <ul className="footer-nav-list">
-              <li>
-                <a
-                  href="/work"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNav('/work');
-                  }}
-                >
-                  Work
-                </a>
-              </li>
-              {SERVICE_NAV_ITEMS.map((service) => (
-                <li key={service.href}>
+          {/* COLUMN 2 — SERVICES */}
+          <div className="footer-nav-col">
+            <h4 className="footer-col-heading">Services</h4>
+            <ul className="footer-links-list">
+              {FOOTER_SERVICES.map((item) => (
+                <li key={item.label}>
                   <a
-                    href={service.href}
+                    href={item.href}
                     onClick={(e) => {
                       e.preventDefault();
-                      handleNav(service.href);
+                      handleNav(item.href);
                     }}
+                    className="footer-nav-anchor"
+                    data-cursor="pointer"
                   >
-                    {service.label}
+                    {item.label}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Quick Links Column */}
-          <div className="footer-links-col">
-            <h4 className="footer-col-title">Quick Links</h4>
-            <ul className="footer-nav-list">
-              {QUICK_LINKS.map((link) => (
-                <li key={link.href}>
+          {/* COLUMN 3 — QUICK LINKS */}
+          <div className="footer-nav-col">
+            <h4 className="footer-col-heading">Quick Links</h4>
+            <ul className="footer-links-list">
+              {FOOTER_QUICK_LINKS.map((item) => (
+                <li key={item.label}>
                   <a
-                    href={link.href}
+                    href={item.href}
                     onClick={(e) => {
                       e.preventDefault();
-                      handleNav(link.href);
+                      handleNav(item.href);
                     }}
+                    className="footer-nav-anchor"
+                    data-cursor="pointer"
                   >
-                    {link.label}
+                    {item.label}
                   </a>
                 </li>
               ))}

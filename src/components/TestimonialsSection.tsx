@@ -17,11 +17,10 @@ export const TestimonialsSection: React.FC = () => {
   return (
     <section className="testimonials-section section-padding">
       <div className="container">
-        {/* Section Heading matching texan.agency */}
+        {/* Section Heading: "Client Review" on one horizontal line */}
         <div className="testimonials-header-row">
           <div className="testimonials-title-group">
-            <h2 className="test-title-word">client</h2>
-            <h2 className="test-title-word">review</h2>
+            <h2 className="client-review-title">Client Review</h2>
           </div>
 
           {/* Navigation Controls */}

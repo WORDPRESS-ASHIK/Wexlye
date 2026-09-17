@@ -21,7 +21,9 @@ export const RouterProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 
   useEffect(() => {
+    document.title = 'Wexlye - Your All-in-One Digital Growth Partner.';
     const handlePopState = () => {
+      document.title = 'Wexlye - Your All-in-One Digital Growth Partner.';
       setCurrentPath(window.location.pathname || '/');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };

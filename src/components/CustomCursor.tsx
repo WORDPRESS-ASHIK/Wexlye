@@ -99,7 +99,7 @@ export const CustomCursor: React.FC = () => {
       cancelAnimationFrame(animationFrameId);
       document.body.classList.remove('has-custom-cursor');
     };
-  }, [isVisible]);
+  }, []);
 
   if (isTouchDevice) return null;
 

@@ -2,11 +2,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 99999;
   opacity: 0;
+  overflow: hidden;
   transition: opacity 0.3s ease;
 }
 
@@ -78,7 +79,7 @@
   margin-top: -26px;
   margin-left: -26px;
   border-color: var(--accent-yellow);
-  background-color: rgba(252, 206, 16, 0.15);
+  background-color: rgba(57, 255, 20, 0.15);
   backdrop-filter: blur(2px);
 }
 
@@ -90,7 +91,7 @@
   margin-left: -44px;
   background-color: var(--accent-yellow);
   border-color: var(--accent-yellow);
-  box-shadow: 0 10px 30px rgba(252, 206, 16, 0.4);
+  box-shadow: 0 10px 30px rgba(57, 255, 20, 0.4);
 }
 
 /* Cursor State: Drag Slider */
@@ -110,7 +111,7 @@
   margin-top: -32px;
   margin-left: -32px;
   border-color: var(--accent-yellow);
-  background-color: rgba(252, 206, 16, 0.2);
+  background-color: rgba(57, 255, 20, 0.2);
 }
 
 /* Text inside badge */

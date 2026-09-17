@@ -13,17 +13,21 @@
 
 .testimonials-title-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: baseline;
 }
 
-.test-title-word {
+.client-review-title {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 6.5vw, 5.5rem);
+  font-size: clamp(2.4rem, 4.8vw, 4.8rem);
   font-weight: 300;
-  line-height: 0.95;
+  line-height: 1.0;
   letter-spacing: -0.035em;
   color: var(--text-primary);
   text-transform: capitalize;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
 }
 
 /* Controls */
@@ -139,6 +143,11 @@
 }
 
 @media (max-width: 768px) {
+  .client-review-title {
+    font-size: clamp(1.8rem, 6.5vw, 2.6rem);
+    white-space: nowrap;
+  }
+
   .testimonial-card {
     flex: 0 0 100%;
     min-width: auto;
