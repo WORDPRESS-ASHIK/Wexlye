@@ -109,8 +109,27 @@
   color: var(--text-secondary);
 }
 
-.stack-detail-btn {
-  align-self: flex-start;
+.stack-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.btn-pill-whatsapp {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #111827;
+  font-weight: 600;
+}
+
+.btn-pill-whatsapp:hover {
+  background-color: #25D366;
+  border-color: #25D366;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
 }
 
 /* Service Detail View Styles */
@@ -414,5 +433,18 @@
 
   .service-stack-card {
     padding: 2rem 1.5rem;
+  }
+
+  .stack-card-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .stack-card-actions .btn-pill {
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
