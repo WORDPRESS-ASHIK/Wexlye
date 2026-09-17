@@ -37,7 +37,13 @@ export const TeamPage: React.FC = () => {
             <div className="team-card">
               <div className="team-image-wrapper">
                 <img
-                  src="/assets/ashik-khan.jpg"
+                  src="/assets/ashik-khan-800.jpg"
+                  srcSet="/assets/ashik-khan-400.jpg 400w, /assets/ashik-khan-800.jpg 800w"
+                  sizes="(max-width: 767px) 90vw, (max-width: 1024px) 45vw, 600px"
+                  width="600"
+                  height="750"
+                  loading="eager"
+                  decoding="async"
                   alt="MD. Ashik Khan - Founder of WEXLYE"
                   className="team-member-img"
                 />
