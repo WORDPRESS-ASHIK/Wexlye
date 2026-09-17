@@ -8,17 +8,39 @@
   display: flex;
   align-items: center;
   z-index: 1000;
-  transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   background: transparent;
 }
 
 .site-header.scrolled {
   height: 72px;
-  background: rgba(255, 255, 255, 0.94);
+  background: #F6F6F8;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Dark Hero Top Header State (over black Hero) */
+.site-header.dark-hero-header {
+  background: transparent;
+}
+
+.site-header.dark-hero-header .logo-text {
+  color: #ffffff;
+}
+
+.site-header.dark-hero-header .burger-btn {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.site-header.dark-hero-header .burger-btn:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.site-header.dark-hero-header .burger-line {
+  background-color: #ffffff;
 }
 
 .header-inner {
@@ -50,6 +72,7 @@
 
 .logo-text {
   color: #000000;
+  transition: color 0.3s ease;
 }
 
 .logo-dot {
@@ -114,7 +137,7 @@
   justify-content: center;
   gap: 5px;
   cursor: pointer;
-  transition: border-color 0.25s ease, background-color 0.25s ease;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
   flex-shrink: 0;
   padding: 0;
 }
@@ -129,7 +152,7 @@
   height: 1.5px;
   background-color: #000000;
   border-radius: 1px;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.3s ease;
 }
 
 .burger-btn.active .line-1 {

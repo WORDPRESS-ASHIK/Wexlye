@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import './Navigation.css';
 
 export const Header: React.FC = () => {
-  const { navigate } = useRouter();
+  const { currentPath, navigate } = useRouter();
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
@@ -18,13 +18,24 @@ export const Header: React.FC = () => {
       }
     };
 
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [currentPath]);
+
+  // Determine if current route has a dark top hero
+  const isDarkHeroPage = currentPath === '/team' || currentPath === '/our-team';
+
+  const headerClasses = [
+    'site-header',
+    isScrolled ? 'scrolled' : '',
+    isDarkHeroPage && !isScrolled ? 'dark-hero-header' : '',
+  ].filter(Boolean).join(' ');
 
   return (
     <>
-      <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
+      <header className={headerClasses}>
         <div className="header-inner container">
           {/* Brand Logo */}
           <a
