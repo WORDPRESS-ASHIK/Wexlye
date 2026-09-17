@@ -186,10 +186,10 @@
   color: #39FF14;
 }
 
-/* 4. OPTIONAL DARK STATEMENT SECTION */
+/* 4. STATEMENT SECTION */
 .team-dark-statement-section {
-  background-color: #0d0d0d;
-  color: #ffffff;
+  background-color: #F6F6F8;
+  color: #000000;
   padding-top: clamp(80px, 10vw, 120px);
   padding-bottom: clamp(80px, 10vw, 120px);
 }
@@ -204,7 +204,7 @@
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: -0.03em;
-  color: #ffffff;
+  color: #000000;
 }
 
 .highlight-green {
