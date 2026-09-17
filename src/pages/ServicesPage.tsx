@@ -35,7 +35,7 @@ export const ServicesPage: React.FC = () => {
                   className="service-stack-card"
                   style={{ top: `${stickyOffset}px` }}
                   data-cursor="pointer"
-                  onClick={() => navigate(`/services/${service.slug}`)}
+                  onClick={() => navigate('/contact')}
                 >
                   <div className="stack-card-inner">
                     <div className="stack-card-left">
@@ -53,15 +53,15 @@ export const ServicesPage: React.FC = () => {
                       </div>
 
                       <a
-                        href={`/services/${service.slug}`}
+                        href="/contact"
                         className="btn-pill btn-pill-dark stack-detail-btn"
                         onClick={(e) => {
                           e.preventDefault();
                           e.stopPropagation();
-                          navigate(`/services/${service.slug}`);
+                          navigate('/contact');
                         }}
                       >
-                        <span>More detail</span>
+                        <span>Discuss Service</span>
                         <ArrowRight size={16} />
                       </a>
                     </div>

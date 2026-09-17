@@ -57,7 +57,7 @@ export const ServicesSection: React.FC = () => {
 
   const handleDiscussClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    navigate(`/services/${activeService.slug}`);
+    navigate('/contact');
   };
 
   return (
@@ -141,7 +141,7 @@ export const ServicesSection: React.FC = () => {
               {/* Bottom Action: "Discuss this service →" Button */}
               <div className="preview-bottom-action">
                 <a
-                  href={`/services/${activeService.slug}`}
+                  href="/contact"
                   className="preview-discuss-btn"
                   onClick={handleDiscussClick}
                   data-cursor="pointer"

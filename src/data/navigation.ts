@@ -23,14 +23,6 @@ export const ALL_NAV_ITEMS: NavItem[] = [
   { label: 'Contact', href: '/contact' },
 ];
 
-export const SERVICE_NAV_ITEMS: NavItem[] = [
-  { label: 'Branding', href: '/branding' },
-  { label: 'UI/UX Design', href: '/ui-ux-design' },
-  { label: 'Web Development', href: '/web-development' },
-  { label: 'App Development', href: '/app-development' },
-  { label: 'Consultation', href: '/consultation' },
-];
-
 export const QUICK_LINKS: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Contact', href: '/contact' },

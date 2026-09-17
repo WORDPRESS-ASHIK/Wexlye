@@ -10,12 +10,12 @@ interface FooterServiceLink {
 }
 
 const FOOTER_SERVICES: FooterServiceLink[] = [
-  { label: 'Work', href: '/work' },
-  { label: 'Branding', href: '/services/branding' },
-  { label: 'UI/UX Design', href: '/services/website-design' },
-  { label: 'Web Development', href: '/services/web-development' },
-  { label: 'App Development', href: '/services/digital-marketing' },
-  { label: 'Consultation', href: '/services/strategic-marketing' },
+  { label: 'All Services', href: '/services' },
+  { label: 'Selected Work', href: '/work' },
+  { label: 'Transparent Pricing', href: '/pricing' },
+  { label: 'About Studio', href: '/about' },
+  { label: 'Meet the Team', href: '/team' },
+  { label: 'Get in Touch', href: '/contact' },
 ];
 
 const FOOTER_QUICK_LINKS = [
