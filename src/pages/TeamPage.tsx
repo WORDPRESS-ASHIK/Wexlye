@@ -36,12 +36,11 @@ export const TeamPage: React.FC = () => {
             {/* TEAM MEMBER 01 */}
             <div className="team-card">
               <div className="team-image-wrapper">
-                <div className="team-placeholder-graphic">
-                  <div className="team-placeholder-icon">
-                    <User size={32} />
-                  </div>
-                  <span className="team-placeholder-label">Team Member 01</span>
-                </div>
+                <img
+                  src="/assets/ashik-khan.jpg"
+                  alt="MD. Ashik Khan - Founder of WEXLYE"
+                  className="team-member-img"
+                />
               </div>
 
               <div className="team-info">

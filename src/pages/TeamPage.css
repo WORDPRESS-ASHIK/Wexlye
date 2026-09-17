@@ -86,6 +86,14 @@
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.team-member-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .team-placeholder-icon {
   width: 64px;
   height: 64px;
@@ -106,7 +114,8 @@
   color: #6b7280;
 }
 
-.team-card:hover .team-placeholder-graphic {
+.team-card:hover .team-placeholder-graphic,
+.team-card:hover .team-member-img {
   transform: scale(1.04);
 }
 
