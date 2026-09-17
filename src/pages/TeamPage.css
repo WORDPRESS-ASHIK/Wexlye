@@ -53,13 +53,16 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
+  grid-template-columns: repeat(2, minmax(0, 540px));
+  justify-content: center;
+  column-gap: 40px;
+  row-gap: 40px;
 }
 
 .team-card {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .team-image-wrapper {
@@ -216,15 +219,17 @@
 /* RESPONSIVE BREAKPOINTS */
 @media (max-width: 991px) {
   .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
+    grid-template-columns: repeat(2, minmax(0, 480px));
+    column-gap: 24px;
+    row-gap: 32px;
   }
 }
 
 @media (max-width: 767px) {
   .team-grid {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    column-gap: 0;
+    row-gap: 3.5rem;
   }
 
   .team-image-wrapper {
