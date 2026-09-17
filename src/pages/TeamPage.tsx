@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
-import { useRouter } from '../context/RouterContext';
-import { User, ArrowUpRight, ArrowRight } from 'lucide-react';
+import { User, ArrowUpRight } from 'lucide-react';
 import './TeamPage.css';
 
 export const TeamPage: React.FC = () => {
-  const { navigate } = useRouter();
 
   useEffect(() => {
     // Set metadata description without overwriting browser title system
@@ -110,28 +108,6 @@ export const TeamPage: React.FC = () => {
           <h2 className="team-statement-text">
             Great work happens when the <span className="highlight-green">right people</span> build it together.
           </h2>
-        </div>
-      </section>
-
-      {/* 5. CTA SECTION */}
-      <section className="team-cta-section">
-        <div className="container">
-          <div className="team-cta-box">
-            <span className="team-cta-label">LET'S WORK TOGETHER</span>
-            <h2 className="team-cta-heading">Have a project in mind?</h2>
-            <a
-              href="/contact"
-              onClick={(e) => {
-                e.preventDefault();
-                navigate('/contact');
-              }}
-              className="team-cta-btn"
-              data-cursor="pointer"
-            >
-              <span>Get a Quote</span>
-              <ArrowRight size={18} />
-            </a>
-          </div>
         </div>
       </section>
     </div>
