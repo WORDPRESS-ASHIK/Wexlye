@@ -41,7 +41,7 @@ export const TeamPage: React.FC = () => {
                   srcSet="/assets/ashik-khan-400.jpg 400w, /assets/ashik-khan-800.jpg 800w"
                   sizes="(max-width: 767px) 90vw, (max-width: 1024px) 45vw, 600px"
                   width="600"
-                  height="750"
+                  height="450"
                   loading="eager"
                   decoding="async"
                   alt="MD. Ashik Khan - Founder of WEXLYE"
