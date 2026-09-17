@@ -40,10 +40,10 @@ export const PricingPage: React.FC = () => {
         eyebrow="PRICING."
         heading={
           <>
-            SIMPLE, TRANSPARENT PRICING FOR DIGITAL <span className="highlight-green">GROWTH.</span>
+            PRICING BUILT AROUND <span className="highlight-green">YOU.</span>
           </>
         }
-        subtitle="Choose the right level of support for your goals, from focused digital projects to ongoing growth partnerships. Every engagement is tailored around what your business actually needs."
+        subtitle="Flexible digital solutions designed around your goals, scope and business needs."
       />
 
       {/* Pricing Cards Grid */}

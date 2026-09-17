@@ -27,10 +27,10 @@ export const ContactPage: React.FC = () => {
         eyebrow="GET IN TOUCH."
         heading={
           <>
-            LET'S BUILD SOMETHING ICONIC <span className="highlight-green">TOGETHER.</span>
+            LET'S BUILD SOMETHING <span className="highlight-green">ICONIC.</span>
           </>
         }
-        subtitle="Whether you're launching a new brand, building a digital experience or looking to accelerate your online growth, our team is ready to collaborate."
+        subtitle="Whether you're launching, rebuilding or growing, our team is ready to collaborate."
       />
 
       {/* Main Form & Info Grid */}

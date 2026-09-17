@@ -25,10 +25,10 @@ export const WorkPage: React.FC = () => {
         eyebrow="SELECTED WORK."
         heading={
           <>
-            WORK THAT TURNS IDEAS INTO REAL-WORLD <span className="highlight-green">IMPACT.</span>
+            WORK THAT MAKES AN <span className="highlight-green">IMPACT.</span>
           </>
         }
-        subtitle="Explore selected digital experiences, brands, websites and growth projects created to solve problems, strengthen businesses and make brands stand out."
+        subtitle="Explore selected brands, websites and digital experiences built to solve problems and help businesses grow."
       />
 
       {/* Main Work Content (Filter Pills & Stacking Cards) */}

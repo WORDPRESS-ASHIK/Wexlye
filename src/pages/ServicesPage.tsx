@@ -17,10 +17,10 @@ export const ServicesPage: React.FC = () => {
         eyebrow="WHAT WE DO."
         heading={
           <>
-            STRATEGY, DESIGN, DEVELOPMENT & <span className="highlight-green">GROWTH</span> — ALL UNDER ONE ROOF.
+            BUILT FOR DIGITAL <span className="highlight-green">GROWTH.</span>
           </>
         }
-        subtitle="From strategy and branding to web development, SEO and digital marketing, we bring the right expertise together to create digital solutions built around your business goals."
+        subtitle="From strategy and branding to development, SEO and marketing, we bring the right expertise together under one roof."
       />
 
       {/* Sticky Stacking Service Cards */}

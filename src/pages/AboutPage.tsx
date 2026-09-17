@@ -41,10 +41,10 @@ export const AboutPage: React.FC = () => {
         eyebrow="ABOUT WEXLYE."
         heading={
           <>
-            WE BUILD DIGITAL EXPERIENCES THAT MOVE BRANDS <span className="highlight-green">FORWARD.</span>
+            WE BUILD WHAT MOVES <span className="highlight-green">BRANDS.</span>
           </>
         }
-        subtitle="WEXLYE is a digital growth partner focused on building meaningful brands, high-performing websites, and digital experiences that create lasting business value."
+        subtitle="WEXLYE builds meaningful brands, high-performing websites and digital experiences designed to create lasting business value."
       />
 
       {/* Visual Showcase Auto-Sliding Carousel */}
