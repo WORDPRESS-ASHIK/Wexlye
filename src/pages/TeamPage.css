@@ -188,7 +188,7 @@
 
 /* 4. OPTIONAL DARK STATEMENT SECTION */
 .team-dark-statement-section {
-  background-color: #101010;
+  background-color: #0d0d0d;
   color: #ffffff;
   padding-top: clamp(80px, 10vw, 120px);
   padding-bottom: clamp(80px, 10vw, 120px);
