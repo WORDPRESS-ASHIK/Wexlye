@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useRouter } from '../context/RouterContext';
 import { PageHero } from '../components/PageHero';
-import { User, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import './TeamPage.css';
 
 export const TeamPage: React.FC = () => {
@@ -74,12 +74,15 @@ export const TeamPage: React.FC = () => {
             {/* TEAM MEMBER 02 */}
             <div className="team-card">
               <div className="team-image-wrapper">
-                <div className="team-placeholder-graphic">
-                  <div className="team-placeholder-icon">
-                    <User size={36} />
-                  </div>
-                  <span className="team-placeholder-label">Alim Al Razi Nihad</span>
-                </div>
+                <img
+                  src="/assets/alim-al-razi-nihad.jpg"
+                  width="600"
+                  height="600"
+                  loading="eager"
+                  decoding="async"
+                  alt="Alim Al Razi Nihad - CEO of WEXLYE"
+                  className="team-member-img"
+                />
               </div>
 
               <div className="team-info">
